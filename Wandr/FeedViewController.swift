@@ -14,5 +14,8 @@ class FeedViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.blueColor()
         title = "Feed"
+			
+			//test
+			print("test")
     }
 }
