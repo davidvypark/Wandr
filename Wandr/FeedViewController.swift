@@ -17,5 +17,6 @@ class FeedViewController: UIViewController {
 			
 			//test
 			print("test")
+			print("another test")
     }
 }
