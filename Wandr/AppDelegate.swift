@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -27,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let feedNavController = UINavigationController(rootViewController: feedViewController)
         
         let cameraViewController = CameraViewController()
+        rootTabViewController.delegate = cameraViewController
         
         let profileViewController = ProfileViewController()
         

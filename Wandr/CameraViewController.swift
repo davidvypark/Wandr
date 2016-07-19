@@ -7,12 +7,45 @@
 //
 
 import UIKit
+import MobileCoreServices
 
 class CameraViewController: UIViewController {
+    
+    let cameraIndex = 1 // The index in the tabBar where the camera will live
+    let cameraImagePickerController = UIImagePickerController()
+    
+    func presentCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(.Camera) == false { return }
+        cameraImagePickerController.sourceType = .Camera
+        // Only showing the option to take videos
+        cameraImagePickerController.mediaTypes = [String(kUTTypeMovie)]
+        cameraImagePickerController.delegate = self
+        self.presentViewController(cameraImagePickerController, animated: true, completion: nil)
+    }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = UIColor.greenColor()
-        title = "Camera"
+}
+
+//MARK: UIImagePickerController Delegate
+extension CameraViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        print("Finished picking media")
     }
 }
+
+//MARK: UITabBarControllerDelegate
+extension CameraViewController: UITabBarControllerDelegate {
+    
+    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
+        // Prevent the tab bar controller from actually selecting the camera tab, instead we just present the image picker
+        if tabBarController.viewControllers?.indexOf(viewController) == cameraIndex {
+            presentCamera()
+            return false
+        }
+        return true
+    }
+}
+
+
+
