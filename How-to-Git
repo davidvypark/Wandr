@@ -1,0 +1,18 @@
+assuming remote make changes
+git co master
+git pull
+git go <yourBranch>
+git merge master
+
+
+// make local changes that i want to push
+git co <branchName>
+git commit -am "blah"
+git push
+git co master
+git pull 
+git co <branch>
+git merge master
+git co master
+git merge <branch>
+git push
