@@ -19,7 +19,7 @@ class ProfileViewController: UIViewController {
     
     func setupSubViews() {
 
-        let testUser = WandrUser(username: "Matt")
+        let testUser = WandrUser(username: "Matt Amerige")
         testUser.profilePicture = UIImage(named: "matt")
         
         let profileHeaderVC = ProfileHeaderViewController(user: testUser)
