@@ -18,7 +18,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         view.backgroundColor = UIColor.blueColor()
         title = "Feed"
 
-		//tableView = UITableView(frame: UIScreen.mainScreen().bounds, style: UITableViewStyle.Plain)
 		tableView = UITableView(frame: UIScreen.mainScreen().bounds)
 		//need to set hight and width of xib to the screen size
 		tableView.estimatedRowHeight = 640
@@ -29,7 +28,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		
 		let nib = UINib(nibName: "FeedPostView", bundle: nil)
 		tableView.registerNib(nib, forCellReuseIdentifier: FeedPostView.cellReuseIdentifier)
-		//tableView.registerClass(FeedPostView.self, forCellReuseIdentifier: FeedPostView.cellReuseIdentifier)
 		self.view.addSubview(self.tableView)
 
     }
@@ -43,7 +41,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		//let cell:FeedPostView = tableView.dequeueReusableCellWithIdentifier(FeedPostView.cellReuseIdentifier, forIndexPath: indexPath) as! FeedPostView
 		
 		let cell = self.tableView.dequeueReusableCellWithIdentifier(FeedPostView.cellReuseIdentifier, forIndexPath: indexPath) as! FeedPostView
 		
