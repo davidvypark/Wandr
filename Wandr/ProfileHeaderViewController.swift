@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class ProfileHeaderViewController: UIViewController {
     
@@ -16,7 +17,6 @@ class ProfileHeaderViewController: UIViewController {
     init(user: WandrUser) {
         self.usernameLabel.text = user.username
         self.profilePictureButton.setImage(user.profilePicture?.circle, forState: .Normal)
-        self.profilePictureButton.adjustsImageWhenHighlighted = false
         super.init(nibName: nil, bundle:nil)
     }
     
@@ -36,17 +36,19 @@ class ProfileHeaderViewController: UIViewController {
         // The profile should take up about half of the view height.
         let padding: CGFloat = 8
         view.addSubview(profilePictureButton)
-        profilePictureButton.translatesAutoresizingMaskIntoConstraints = false
-        profilePictureButton.heightAnchor.constraintEqualToAnchor(view.heightAnchor, multiplier: 0.5).active = true
-        profilePictureButton.widthAnchor.constraintLessThanOrEqualToAnchor(profilePictureButton.heightAnchor).active = true
-        profilePictureButton.topAnchor.constraintEqualToAnchor(view.topAnchor, constant: padding).active = true
-        profilePictureButton.leftAnchor.constraintEqualToAnchor(view.leftAnchor, constant: padding).active = true
+        profilePictureButton.snp_makeConstraints { (make) in
+            make.height.equalTo(view.snp_height).dividedBy(2)
+            make.width.equalTo(view.snp_height).dividedBy(2)
+            make.left.equalTo(view.snp_left).offset(padding)
+            make.top.equalTo(view.snp_top).offset(padding)
+        }
         
         // username should be 8 points below the profile picture
         view.addSubview(usernameLabel)
-        usernameLabel.translatesAutoresizingMaskIntoConstraints = false
-        usernameLabel.leftAnchor.constraintEqualToAnchor(view.leftAnchor, constant: padding).active = true
-        usernameLabel.topAnchor.constraintEqualToAnchor(profilePictureButton.bottomAnchor, constant: padding).active = true
+        usernameLabel.snp_makeConstraints { (make) in
+            make.left.equalTo(view.snp_left).offset(padding)
+            make.top.equalTo(profilePictureButton.snp_bottom).offset(padding)
+        }
     }
     
     func setupButtonTargetAction() {
