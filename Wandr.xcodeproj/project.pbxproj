@@ -10,6 +10,7 @@
 		C9519BBF1D3E73FA008DBA87 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9519BBE1D3E73FA008DBA87 /* FeedViewController.swift */; };
 		C9519BC11D3E7406008DBA87 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9519BC01D3E7406008DBA87 /* CameraViewController.swift */; };
 		C9519BC31D3E740D008DBA87 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9519BC21D3E740D008DBA87 /* ProfileViewController.swift */; };
+		C95E138C1D3F97490024E73A /* ProfileHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95E138B1D3F97490024E73A /* ProfileHeaderViewController.swift */; };
 		FFF8F2EC1D3E675F00F1575D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8F2EB1D3E675F00F1575D /* AppDelegate.swift */; };
 		FFF8F2F31D3E675F00F1575D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFF8F2F21D3E675F00F1575D /* Assets.xcassets */; };
 		FFF8F2FE1D3EB70000F1575D /* WandrPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8F2FD1D3EB70000F1575D /* WandrPost.swift */; };
@@ -23,6 +24,7 @@
 		C9519BBE1D3E73FA008DBA87 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		C9519BC01D3E7406008DBA87 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		C9519BC21D3E740D008DBA87 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C95E138B1D3F97490024E73A /* ProfileHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewController.swift; sourceTree = "<group>"; };
 		FFF8F2E81D3E675F00F1575D /* Wandr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wandr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFF8F2EB1D3E675F00F1575D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFF8F2F21D3E675F00F1575D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C95E138D1D3F97610024E73A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C9519BC21D3E740D008DBA87 /* ProfileViewController.swift */,
+				C95E138B1D3F97490024E73A /* ProfileHeaderViewController.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
 		FFF8F2DF1D3E675F00F1575D = {
 			isa = PBXGroup;
 			children = (
@@ -68,10 +79,10 @@
 				FFF8F2F71D3E675F00F1575D /* Info.plist */,
 				C9519BBE1D3E73FA008DBA87 /* FeedViewController.swift */,
 				C9519BC01D3E7406008DBA87 /* CameraViewController.swift */,
-				C9519BC21D3E740D008DBA87 /* ProfileViewController.swift */,
 				FFF8F3001D3EB94000F1575D /* TestDataUsers.swift */,
 				FFF8F3061D3EDDDA00F1575D /* FeedPostView.swift */,
 				FFF8F3041D3EDB7800F1575D /* FeedPostView.xib */,
+				C95E138D1D3F97610024E73A /* Profile */,
 				FFF8F2FF1D3EB70700F1575D /* Models */,
 				FFF8F2F21D3E675F00F1575D /* Assets.xcassets */,
 			);
@@ -164,6 +175,7 @@
 				FFF8F3031D3EBB2800F1575D /* WandrUser.swift in Sources */,
 				C9519BBF1D3E73FA008DBA87 /* FeedViewController.swift in Sources */,
 				FFF8F2FE1D3EB70000F1575D /* WandrPost.swift in Sources */,
+				C95E138C1D3F97490024E73A /* ProfileHeaderViewController.swift in Sources */,
 				FFF8F3011D3EB94000F1575D /* TestDataUsers.swift in Sources */,
 				FFF8F2EC1D3E675F00F1575D /* AppDelegate.swift in Sources */,
 			);

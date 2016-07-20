@@ -6,9 +6,15 @@
 //  Copyright © 2016 David Park. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-struct WandrUser {
-	
+class WandrUser {
+    
+    var username: String
+    var profilePicture: UIImage?
+    
+    init(username: String) {
+        self.username = username
+    }
+    
 }

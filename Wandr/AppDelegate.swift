@@ -31,8 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         rootTabViewController.delegate = cameraViewController
         
         let profileViewController = ProfileViewController()
+        let profileNavController = UINavigationController(rootViewController: profileViewController)
+        profileNavController.navigationBar.translucent = false
+        profileNavController.navigationBar.opaque = true
         
-        rootTabViewController.viewControllers = [feedNavController, cameraViewController, profileViewController]
+        rootTabViewController.viewControllers = [feedNavController, cameraViewController, profileNavController]
         
         // Set the titles for the tabs here
         rootTabViewController.tabBar.items?[0].title = "Feed"
