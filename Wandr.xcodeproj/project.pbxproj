@@ -47,13 +47,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C95E138D1D3F97610024E73A /* Profile */ = {
+		C95E138D1D3F97610024E73A /* ProfileViewController */ = {
 			isa = PBXGroup;
 			children = (
 				C9519BC21D3E740D008DBA87 /* ProfileViewController.swift */,
 				C95E138B1D3F97490024E73A /* ProfileHeaderViewController.swift */,
 			);
-			name = Profile;
+			name = ProfileViewController;
 			sourceTree = "<group>";
 		};
 		FFF8F2DF1D3E675F00F1575D = {
@@ -77,13 +77,9 @@
 			children = (
 				FFF8F2EB1D3E675F00F1575D /* AppDelegate.swift */,
 				FFF8F2F71D3E675F00F1575D /* Info.plist */,
-				C9519BBE1D3E73FA008DBA87 /* FeedViewController.swift */,
-				C9519BC01D3E7406008DBA87 /* CameraViewController.swift */,
-				FFF8F3001D3EB94000F1575D /* TestDataUsers.swift */,
-				FFF8F3061D3EDDDA00F1575D /* FeedPostView.swift */,
-				FFF8F3041D3EDB7800F1575D /* FeedPostView.xib */,
-				C95E138D1D3F97610024E73A /* Profile */,
+				FFF8F32E1D3FC98900F1575D /* Views */,
 				FFF8F2FF1D3EB70700F1575D /* Models */,
+				FFF8F3001D3EB94000F1575D /* TestDataUsers.swift */,
 				FFF8F2F21D3E675F00F1575D /* Assets.xcassets */,
 			);
 			path = Wandr;
@@ -96,6 +92,18 @@
 				FFF8F3021D3EBB2800F1575D /* WandrUser.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		FFF8F32E1D3FC98900F1575D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C9519BBE1D3E73FA008DBA87 /* FeedViewController.swift */,
+				C9519BC01D3E7406008DBA87 /* CameraViewController.swift */,
+				FFF8F3061D3EDDDA00F1575D /* FeedPostView.swift */,
+				FFF8F3041D3EDB7800F1575D /* FeedPostView.xib */,
+				C95E138D1D3F97610024E73A /* ProfileViewController */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

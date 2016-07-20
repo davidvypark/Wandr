@@ -3,65 +3,75 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedPostView" customModule="Wandr" customModuleProvider="target">
-            <connections>
-                <outlet property="contentView" destination="iN0-l3-epB" id="oWQ-UY-OnH"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedPostView" customModule="Wandr" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="968"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PH-cn-yGR">
-                    <rect key="frame" x="85" y="8" width="429" height="69"/>
-                    <color key="backgroundColor" red="0.2252591135" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="Button"/>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J49-vV-dB3">
-                    <rect key="frame" x="522" y="8" width="70" height="69"/>
-                    <color key="backgroundColor" red="0.75294117650000003" green="0.22352941179999999" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="Button"/>
-                </button>
-                <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vDt-5r-IHo">
-                    <rect key="frame" x="10" y="85" width="584" height="584"/>
-                    <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycB-3B-D7w">
-                    <rect key="frame" x="8" y="8" width="69" height="69"/>
-                    <color key="backgroundColor" red="0.27088064839999998" green="0.51224221670000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="Button"/>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="likes Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJA-JM-MHj">
-                    <rect key="frame" x="10" y="677" width="584" height="21"/>
-                    <color key="backgroundColor" red="0.4639872256" green="1" blue="0.81426856820000004" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Caption Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcI-5l-Oqk">
-                    <rect key="frame" x="8" y="706" width="584" height="112"/>
-                    <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFN-kl-1Gy">
-                    <rect key="frame" x="8" y="933" width="582" height="30"/>
-                    <color key="backgroundColor" red="0.24265755289999999" green="0.95473270320000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="(button) more..."/>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUa-qm-HAr">
-                    <rect key="frame" x="8" y="826" width="584" height="99"/>
-                    <color key="backgroundColor" red="0.75294117650000003" green="0.22352941179999999" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="Button"/>
-                </button>
-            </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="348" y="457"/>
-        </view>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedCell" rowHeight="640" id="AY8-Yv-CMg" customClass="FeedPostView" customModule="Wandr" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="544" height="640"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AY8-Yv-CMg" id="mVV-Hf-nCw">
+                <rect key="frame" x="0.0" y="0.0" width="544" height="639.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUa-qm-HAr">
+                        <rect key="frame" x="8" y="554" width="314" height="30"/>
+                        <color key="backgroundColor" red="0.75294117650000003" green="0.22352941179999999" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="Button"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PH-cn-yGR">
+                        <rect key="frame" x="8" y="8" width="314" height="30"/>
+                        <color key="backgroundColor" red="0.2252591135" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="Button"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="likes Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJA-JM-MHj">
+                        <rect key="frame" x="8" y="496.5" width="311" height="21"/>
+                        <color key="backgroundColor" red="0.4639872256" green="1" blue="0.81426856820000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Caption Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcI-5l-Oqk">
+                        <rect key="frame" x="8" y="525.5" width="311" height="20.5"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFN-kl-1Gy">
+                        <rect key="frame" x="8" y="592" width="311" height="30"/>
+                        <color key="backgroundColor" red="0.24265755289999999" green="0.95473270320000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="(button) more..."/>
+                    </button>
+                    <view alpha="0.5" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vDt-5r-IHo">
+                        <rect key="frame" x="8" y="46" width="311" height="442.5"/>
+                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="AFN-kl-1Gy" secondAttribute="trailing" constant="3" id="0ho-Tc-CdZ"/>
+                    <constraint firstItem="AFN-kl-1Gy" firstAttribute="top" secondItem="zUa-qm-HAr" secondAttribute="bottom" constant="8" id="1SW-it-fYz"/>
+                    <constraint firstItem="kJA-JM-MHj" firstAttribute="leading" secondItem="mVV-Hf-nCw" secondAttribute="leadingMargin" id="8dU-dL-vJ8"/>
+                    <constraint firstItem="zUa-qm-HAr" firstAttribute="top" secondItem="fcI-5l-Oqk" secondAttribute="bottom" constant="8" id="DUL-rd-yrZ"/>
+                    <constraint firstItem="zUa-qm-HAr" firstAttribute="leading" secondItem="mVV-Hf-nCw" secondAttribute="leadingMargin" id="ELe-KM-4fl"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="fcI-5l-Oqk" secondAttribute="trailing" constant="3" id="Fce-Vc-cWz"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="vDt-5r-IHo" secondAttribute="leading" id="H3N-Bx-Utk"/>
+                    <constraint firstItem="AFN-kl-1Gy" firstAttribute="leading" secondItem="mVV-Hf-nCw" secondAttribute="leadingMargin" id="IMb-t0-GNZ"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="AFN-kl-1Gy" secondAttribute="bottom" constant="9.5" id="Pyy-GM-Jnv"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="kJA-JM-MHj" secondAttribute="trailing" constant="3" id="T7F-1c-QtA"/>
+                    <constraint firstItem="vDt-5r-IHo" firstAttribute="top" secondItem="8PH-cn-yGR" secondAttribute="bottom" constant="8" id="WPa-3V-qEA"/>
+                    <constraint firstItem="8PH-cn-yGR" firstAttribute="top" secondItem="mVV-Hf-nCw" secondAttribute="topMargin" id="YkW-Sm-IKK"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="vDt-5r-IHo" secondAttribute="trailing" constant="3" id="aiJ-p7-VDG"/>
+                    <constraint firstItem="kJA-JM-MHj" firstAttribute="top" secondItem="vDt-5r-IHo" secondAttribute="bottom" constant="8" id="clb-6e-SzC"/>
+                    <constraint firstItem="fcI-5l-Oqk" firstAttribute="top" secondItem="kJA-JM-MHj" secondAttribute="bottom" constant="8" id="gAB-lb-cB2"/>
+                    <constraint firstItem="8PH-cn-yGR" firstAttribute="leading" secondItem="mVV-Hf-nCw" secondAttribute="leadingMargin" id="gTo-9I-dhs"/>
+                    <constraint firstItem="fcI-5l-Oqk" firstAttribute="leading" secondItem="mVV-Hf-nCw" secondAttribute="leadingMargin" id="uOV-xG-KnA"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="8PH-cn-yGR" secondAttribute="trailing" id="vKD-Ld-bo8"/>
+                    <constraint firstItem="zUa-qm-HAr" firstAttribute="trailing" secondItem="mVV-Hf-nCw" secondAttribute="trailingMargin" id="vbo-OL-t5O"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="738" y="-236"/>
+        </tableViewCell>
     </objects>
 </document>

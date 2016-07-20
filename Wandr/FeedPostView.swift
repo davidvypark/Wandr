@@ -9,25 +9,42 @@
 import Foundation
 import UIKit
 
-class FeedPostView: UIView {
+class FeedPostView: UITableViewCell {
 	
 	//properties
-	@IBOutlet var contentView: UIView!
+
+//	@IBOutlet weak var profilePictureButton: UIButton!
+//	@IBOutlet weak var usernameHeaderButton: UIButton!
+//	//@IBOutlet weak var additionalOptionsButton: UIButton!
+//	@IBOutlet weak var mediaContentWindow: UIView!
+//	@IBOutlet weak var bookmarksLabel: UILabel!
+//	@IBOutlet weak var captionLabel: UILabel!
+//	@IBOutlet weak var commentsButton: UIButton!
+//	@IBOutlet weak var moreCommentsButton: UIButton!
+	
+	static let cellReuseIdentifier = "FeedCell"
 	
 	var feedPostItem: WandrPost! {
+		
 		didSet {
-		
-		
-		
+//			profilePictureButton.setImage(feedPostItem.profilePicture, forState: .Normal)
+//			usernameHeaderButton.setTitle(feedPostItem.username, forState: .Normal)
+//			bookmarksLabel.text = "Bookmarks " + String(feedPostItem.bookmarks)
+//			captionLabel.text = feedPostItem.caption
+//			commentsButton.setTitle(feedPostItem.comments[0], forState: .Normal)
+//			moreCommentsButton.setTitle("more...", forState: .Normal)
 		}
-		
-		
 		
 	}
 	
-	override init(frame: CGRect) {
-		super.init(frame: frame)
-		commonInit()
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		
+		print("hitting actual nib")
+	}
+	
+	override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
+		super.init(style: style, reuseIdentifier: reuseIdentifier)
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
@@ -36,7 +53,7 @@ class FeedPostView: UIView {
 	}
 	
 	private func commonInit() {
-		NSBundle.mainBundle().loadNibNamed("ItemView", owner: self, options: nil)
+		print("calling nib for feedpost")
 		self.addSubview(self.contentView)
 		contentView.translatesAutoresizingMaskIntoConstraints = false
 		contentView.topAnchor.constraintEqualToAnchor(self.topAnchor).active = true
