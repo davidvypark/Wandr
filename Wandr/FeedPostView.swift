@@ -10,8 +10,6 @@ import Foundation
 import UIKit
 
 class FeedPostView: UITableViewCell {
-	
-	//properties
 
 //	@IBOutlet weak var profilePictureButton: UIButton!
 //	@IBOutlet weak var usernameHeaderButton: UIButton!
