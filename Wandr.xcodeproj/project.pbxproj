@@ -12,6 +12,7 @@
 		C9519BC31D3E740D008DBA87 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9519BC21D3E740D008DBA87 /* ProfileViewController.swift */; };
 		C95E138C1D3F97490024E73A /* ProfileHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95E138B1D3F97490024E73A /* ProfileHeaderViewController.swift */; };
 		C95E13931D3FB92A0024E73A /* ProfileExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95E13921D3FB92A0024E73A /* ProfileExtensions.swift */; };
+		F8DE6DCB9DB3EA52AF5AEB73 /* Pods_Wandr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204CF253C7CBCEC4A265D158 /* Pods_Wandr.framework */; };
 		FFF8F2EC1D3E675F00F1575D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8F2EB1D3E675F00F1575D /* AppDelegate.swift */; };
 		FFF8F2F31D3E675F00F1575D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFF8F2F21D3E675F00F1575D /* Assets.xcassets */; };
 		FFF8F2FE1D3EB70000F1575D /* WandrPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8F2FD1D3EB70000F1575D /* WandrPost.swift */; };
@@ -22,11 +23,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		204CF253C7CBCEC4A265D158 /* Pods_Wandr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wandr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B9973B0DF57DFFCA6E92E7A /* Pods-Wandr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wandr.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wandr/Pods-Wandr.release.xcconfig"; sourceTree = "<group>"; };
 		C9519BBE1D3E73FA008DBA87 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		C9519BC01D3E7406008DBA87 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		C9519BC21D3E740D008DBA87 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C95E138B1D3F97490024E73A /* ProfileHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewController.swift; sourceTree = "<group>"; };
 		C95E13921D3FB92A0024E73A /* ProfileExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileExtensions.swift; sourceTree = "<group>"; };
+		E70255C539ED7CB907AB8D39 /* Pods-Wandr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wandr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wandr/Pods-Wandr.debug.xcconfig"; sourceTree = "<group>"; };
 		FFF8F2E81D3E675F00F1575D /* Wandr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wandr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFF8F2EB1D3E675F00F1575D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFF8F2F21D3E675F00F1575D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -43,12 +47,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8DE6DCB9DB3EA52AF5AEB73 /* Pods_Wandr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		60D1DCEFF6D83F9CEC474902 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				204CF253C7CBCEC4A265D158 /* Pods_Wandr.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		66DCC197EC1EAC3324F7706D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E70255C539ED7CB907AB8D39 /* Pods-Wandr.debug.xcconfig */,
+				5B9973B0DF57DFFCA6E92E7A /* Pods-Wandr.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C95E138D1D3F97610024E73A /* ProfileViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +86,8 @@
 			children = (
 				FFF8F2EA1D3E675F00F1575D /* Wandr */,
 				FFF8F2E91D3E675F00F1575D /* Products */,
+				66DCC197EC1EAC3324F7706D /* Pods */,
+				60D1DCEFF6D83F9CEC474902 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,9 +140,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFF8F2FA1D3E675F00F1575D /* Build configuration list for PBXNativeTarget "Wandr" */;
 			buildPhases = (
+				24D4A51CAA629D085B411872 /* 📦 Check Pods Manifest.lock */,
 				FFF8F2E41D3E675F00F1575D /* Sources */,
 				FFF8F2E51D3E675F00F1575D /* Frameworks */,
 				FFF8F2E61D3E675F00F1575D /* Resources */,
+				F5451323C3CEE896D886F43D /* 📦 Embed Pods Frameworks */,
+				48BF299BBFF5FAD02850EE01 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -174,6 +201,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24D4A51CAA629D085B411872 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		48BF299BBFF5FAD02850EE01 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wandr/Pods-Wandr-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5451323C3CEE896D886F43D /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wandr/Pods-Wandr-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FFF8F2E41D3E675F00F1575D /* Sources */ = {
@@ -283,6 +358,7 @@
 		};
 		FFF8F2FB1D3E675F00F1575D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E70255C539ED7CB907AB8D39 /* Pods-Wandr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -297,6 +373,7 @@
 		};
 		FFF8F2FC1D3E675F00F1575D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B9973B0DF57DFFCA6E92E7A /* Pods-Wandr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
