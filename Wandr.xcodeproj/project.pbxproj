@@ -10,8 +10,8 @@
 		C9519BBF1D3E73FA008DBA87 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9519BBE1D3E73FA008DBA87 /* FeedViewController.swift */; };
 		C9519BC11D3E7406008DBA87 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9519BC01D3E7406008DBA87 /* CameraViewController.swift */; };
 		C9519BC31D3E740D008DBA87 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9519BC21D3E740D008DBA87 /* ProfileViewController.swift */; };
-		C95E138C1D3F97490024E73A /* ProfileHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95E138B1D3F97490024E73A /* ProfileHeaderViewController.swift */; };
 		C95E13931D3FB92A0024E73A /* ProfileExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95E13921D3FB92A0024E73A /* ProfileExtensions.swift */; };
+		C95E13A21D412AAA0024E73A /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95E13A11D412AAA0024E73A /* ProfileHeaderView.swift */; };
 		F8DE6DCB9DB3EA52AF5AEB73 /* Pods_Wandr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204CF253C7CBCEC4A265D158 /* Pods_Wandr.framework */; };
 		FFF8F2EC1D3E675F00F1575D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8F2EB1D3E675F00F1575D /* AppDelegate.swift */; };
 		FFF8F2F31D3E675F00F1575D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFF8F2F21D3E675F00F1575D /* Assets.xcassets */; };
@@ -28,8 +28,8 @@
 		C9519BBE1D3E73FA008DBA87 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		C9519BC01D3E7406008DBA87 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		C9519BC21D3E740D008DBA87 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		C95E138B1D3F97490024E73A /* ProfileHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewController.swift; sourceTree = "<group>"; };
 		C95E13921D3FB92A0024E73A /* ProfileExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileExtensions.swift; sourceTree = "<group>"; };
+		C95E13A11D412AAA0024E73A /* ProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		E70255C539ED7CB907AB8D39 /* Pods-Wandr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wandr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wandr/Pods-Wandr.debug.xcconfig"; sourceTree = "<group>"; };
 		FFF8F2E81D3E675F00F1575D /* Wandr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wandr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFF8F2EB1D3E675F00F1575D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,14 +71,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		C95E138D1D3F97610024E73A /* ProfileViewController */ = {
+		C95E138D1D3F97610024E73A /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				C9519BC21D3E740D008DBA87 /* ProfileViewController.swift */,
-				C95E138B1D3F97490024E73A /* ProfileHeaderViewController.swift */,
+				C95E13A11D412AAA0024E73A /* ProfileHeaderView.swift */,
 				C95E13921D3FB92A0024E73A /* ProfileExtensions.swift */,
 			);
-			name = ProfileViewController;
+			name = Profile;
 			sourceTree = "<group>";
 		};
 		FFF8F2DF1D3E675F00F1575D = {
@@ -128,7 +128,7 @@
 				C9519BC01D3E7406008DBA87 /* CameraViewController.swift */,
 				FFF8F3061D3EDDDA00F1575D /* FeedPostView.swift */,
 				FFF8F3041D3EDB7800F1575D /* FeedPostView.xib */,
-				C95E138D1D3F97610024E73A /* ProfileViewController */,
+				C95E138D1D3F97610024E73A /* Profile */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -257,11 +257,11 @@
 			files = (
 				C9519BC31D3E740D008DBA87 /* ProfileViewController.swift in Sources */,
 				C9519BC11D3E7406008DBA87 /* CameraViewController.swift in Sources */,
+				C95E13A21D412AAA0024E73A /* ProfileHeaderView.swift in Sources */,
 				FFF8F3071D3EDDDA00F1575D /* FeedPostView.swift in Sources */,
 				FFF8F3031D3EBB2800F1575D /* WandrUser.swift in Sources */,
 				C9519BBF1D3E73FA008DBA87 /* FeedViewController.swift in Sources */,
 				FFF8F2FE1D3EB70000F1575D /* WandrPost.swift in Sources */,
-				C95E138C1D3F97490024E73A /* ProfileHeaderViewController.swift in Sources */,
 				C95E13931D3FB92A0024E73A /* ProfileExtensions.swift in Sources */,
 				FFF8F3011D3EB94000F1575D /* TestDataUsers.swift in Sources */,
 				FFF8F2EC1D3E675F00F1575D /* AppDelegate.swift in Sources */,

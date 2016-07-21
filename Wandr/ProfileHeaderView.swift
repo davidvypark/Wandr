@@ -1,19 +1,17 @@
 //
-//  ProfileHeaderViewController.swift
+//  ProfileHeaderView.swift
 //  Wandr
 //
-//  Created by Matt Amerige on 7/20/16.
+//  Created by Matt Amerige on 7/21/16.
 //  Copyright © 2016 David Park. All rights reserved.
 //
 
 import UIKit
-import SnapKit
 
-class ProfileHeaderViewController: UIViewController {
+class ProfileHeaderView: UICollectionReusableView {
     
-    //MARK: Properties
-    
-    let user: WandrUser
+    var username = "EMPTY USERNAME"
+    var profilePicture = UIImage()
     
     let profilePictureButton = UIButton()
     let usernameLabel = UILabel()
@@ -27,29 +25,19 @@ class ProfileHeaderViewController: UIViewController {
     
     let editProfileButton = UIButton(type: .System)
     
-    //MARK: Initialization
-    init(user: WandrUser) {
-        self.user = user
-        super.init(nibName: nil, bundle:nil)
-    }
     
-    required init?(coder aDecoder: NSCoder) {
-        self.user = WandrUser(username: "EMPTY")
-        super.init(coder: aDecoder)
-    }
-    //MARK: ViewController Lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = UIColor.whiteColor()
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        backgroundColor = UIColor.whiteColor()
         setupSubviewAppearance()
-        setupButtonTargetAction()
         setupSubviewConstraints()
     }
     
     func setupSubviewAppearance() {
         // Profile Picture
-        profilePictureButton.setImage(user.profilePicture?.circle, forState: .Normal)
-
+        profilePictureButton.setImage(profilePicture.circle, forState: .Normal)
+        
         // Username Label
         setupUsernameLabelAppearance()
         
@@ -77,20 +65,20 @@ class ProfileHeaderViewController: UIViewController {
         // This is all to bold just the TEXT part of the string
         let nsText = "\(text)\n\(subText)" as NSString
         let attributedStringNormal = NSMutableAttributedString(string: nsText as String,
-                                                         attributes: [NSFontAttributeName:UIFont.systemFontOfSize(UIFont.systemFontSize())])
+                                                               attributes: [NSFontAttributeName:UIFont.systemFontOfSize(UIFont.systemFontSize())])
         let boldFontAttribute = [NSFontAttributeName: UIFont.boldSystemFontOfSize(UIFont.systemFontSize())]
         
         attributedStringNormal.addAttributes(boldFontAttribute, range: nsText.rangeOfString(text))
         attributedStringNormal.addAttribute(NSForegroundColorAttributeName, value: UIColor.blackColor(), range: NSMakeRange(0, nsText.length))
         
         button.setAttributedTitle(attributedStringNormal, forState: .Normal)
-
+        
         button.titleLabel?.lineBreakMode = .ByWordWrapping
-        button.titleLabel?.textAlignment = .Center        
+        button.titleLabel?.textAlignment = .Center
     }
     
     func setupUsernameLabelAppearance() {
-        usernameLabel.text = user.username
+        usernameLabel.text = username
         usernameLabel.font = UIFont.boldSystemFontOfSize(UIFont.systemFontSize())
     }
     
@@ -106,41 +94,41 @@ class ProfileHeaderViewController: UIViewController {
         editProfileButton.backgroundColor = UIColor.lightGrayColor()
         editProfileButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
     }
-    
+
     //MARK: Constraints
     func setupSubviewConstraints() {
         
         // Add the profile picture to the upper left, with a padding on 8 points on the top and left
         // The profile should take up about half of the view height.
         let padding: CGFloat = 8
-        view.addSubview(profilePictureButton)
+        addSubview(profilePictureButton)
         profilePictureButton.snp_makeConstraints { (make) in
-            make.height.equalTo(view.snp_height).dividedBy(2.5)
-            make.width.equalTo(view.snp_height).dividedBy(2.5)
-            make.left.equalTo(view.snp_left).offset(padding)
-            make.top.equalTo(view.snp_top).offset(padding)
+            make.height.equalTo(self.snp_height).dividedBy(2.5)
+            make.width.equalTo(self.snp_height).dividedBy(2.5)
+            make.left.equalTo(self.snp_left).offset(padding)
+            make.top.equalTo(self.snp_top).offset(padding)
         }
         
         // username should be 8 points below the profile picture
-        view.addSubview(usernameLabel)
+        addSubview(usernameLabel)
         usernameLabel.snp_makeConstraints { (make) in
-            make.left.equalTo(view.snp_left).offset(padding)
+            make.left.equalTo(self.snp_left).offset(padding)
             make.top.equalTo(profilePictureButton.snp_bottom).offset(padding)
         }
         
         // Blib should be 8 points below the name, extending to the edges of the super view (minus the padding)
-        view.addSubview(aboutLabel)
+        addSubview(aboutLabel)
         aboutLabel.snp_makeConstraints { (make) in
             make.top.equalTo(usernameLabel.snp_bottom).offset(padding)
-            make.left.equalTo(view.snp_left).offset(padding)
-            make.right.equalTo(view.snp_right).offset(-padding)
+            make.left.equalTo(self.snp_left).offset(padding)
+            make.right.equalTo(self.snp_right).offset(-padding)
         }
         
         // Add the post, followers, and following button to a stackview
-        view.addSubview(postsButton)
-        view.addSubview(followersbutton)
-        view.addSubview(followingButton)
-        view.addSubview(buttonStackView)
+        addSubview(postsButton)
+        addSubview(followersbutton)
+        addSubview(followingButton)
+        addSubview(buttonStackView)
         
         buttonStackView.addArrangedSubview(postsButton)
         buttonStackView.addArrangedSubview(followersbutton)
@@ -150,13 +138,13 @@ class ProfileHeaderViewController: UIViewController {
         buttonStackView.spacing = padding * 2.0
         
         buttonStackView.snp_makeConstraints { (make) in
-            make.top.equalTo(view.snp_top).offset(padding)
-            make.right.equalTo(view.snp_right).offset(-padding * 4.0)
+            make.top.equalTo(self.snp_top).offset(padding)
+            make.right.equalTo(self.snp_right).offset(-padding * 4.0)
             
         }
         
         // Edit button is below the stackview
-        view.addSubview(editProfileButton)
+        addSubview(editProfileButton)
         
         editProfileButton.snp_makeConstraints { (make) in
             make.centerX.equalTo(buttonStackView.snp_centerX)
@@ -166,16 +154,7 @@ class ProfileHeaderViewController: UIViewController {
         }
         
     }
+
     
-    //MARK: Button Action
-    func setupButtonTargetAction() {
-        // This doesn't work yet!
-        profilePictureButton.addTarget(self, action: #selector(self.profileButtonTapped), forControlEvents: .TouchUpInside)
-    }
-    
-    func profileButtonTapped(sender: UIButton) {
-      print("Profile button tapped")
-    }
-    
-    
+
 }
