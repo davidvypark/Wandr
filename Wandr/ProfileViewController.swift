@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import SnapKit
 
 class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.orangeColor()
-        title = "Profile"
+        tabBarItem.title = "Profile"
+        navigationItem.title = "Matt Amerige"
         setupSubViews()
     }
     
@@ -25,11 +27,12 @@ class ProfileViewController: UIViewController {
         let profileHeaderVC = ProfileHeaderViewController(user: testUser)
         view.addSubview(profileHeaderVC.view)
         
-        profileHeaderVC.view.translatesAutoresizingMaskIntoConstraints = false
-        // Profile header view has the same width as the screen, takes up 1/4 of the screen, and is at the top
-        profileHeaderVC.view.widthAnchor.constraintEqualToAnchor(view.widthAnchor).active = true
-        profileHeaderVC.view.heightAnchor.constraintEqualToAnchor(view.heightAnchor, multiplier: 0.25).active = true
-        profileHeaderVC.view.topAnchor.constraintEqualToAnchor(view.topAnchor).active = true
-        profileHeaderVC.view.leftAnchor.constraintEqualToAnchor(view.leftAnchor).active = true
+        // Profile header view has the same width as the screen, takes up 1/4 of the screen, and is at the top        
+        profileHeaderVC.view.snp_makeConstraints { (make) in
+            make.width.equalTo(view.snp_width)
+            make.height.equalTo(view).dividedBy(3)
+            make.top.equalTo(view.snp_top)
+            make.left.equalTo(view.snp_left)
+        }
     }
 }
