@@ -11,16 +11,11 @@ import UIKit
 
 struct WandrPost {
 	
-	let username: String
-	var profilePicture = UIImage()
-	let content: String //change to video file	
+	let user: WandrUser
+	let content: UIImage				//change to video file
 	var bookmarks: Int
 	let location: String
 	var comments: [String]
 	let caption: String
 	
-}
-
-func ==(lhs: WandrPost, rhs: WandrPost) -> Bool {
-	return lhs == rhs
 }
