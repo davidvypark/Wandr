@@ -11,6 +11,10 @@ import UIKit
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	
 	var tableView: UITableView = UITableView()
+	
+	override func viewWillAppear(animated: Bool) {
+		generateTestData()
+	}
 
 	
     override func viewDidLoad() {
@@ -19,7 +23,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         title = "Feed"
 
 		tableView = UITableView(frame: UIScreen.mainScreen().bounds)
-		//need to set hight and width of xib to the screen size
 		tableView.estimatedRowHeight = 640
 		tableView.rowHeight = UITableViewAutomaticDimension
 		
@@ -37,16 +40,19 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	}
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return postArray.count
+		return 2
+		
+		//return postArray.count
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		
 		let cell = self.tableView.dequeueReusableCellWithIdentifier(FeedPostView.cellReuseIdentifier, forIndexPath: indexPath) as! FeedPostView
 		
+		let currentPost = postArray[indexPath.row]
+		cell.feedPostItem = currentPost
+		
 		return cell
 	}
-	
-	
 	
 }
