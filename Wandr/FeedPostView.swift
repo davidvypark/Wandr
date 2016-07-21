@@ -9,9 +9,16 @@
 import Foundation
 import UIKit
 
+protocol FeedPostViewDelegate: class {
+	func showComments()
+	func goToUserProfile()
+}
+
 var commentsToLoad = [String]()
 
 class FeedPostView: UITableViewCell {
+	
+	weak var delegate: FeedPostViewDelegate?
 
 	@IBOutlet weak var temporaryImageView: UIImageView!
 	
@@ -69,11 +76,11 @@ class FeedPostView: UITableViewCell {
 	//PostButtonActions
 
 	@IBAction func profilePictureButtonPressed(sender: AnyObject) {
-		//go to user profile
+		goToUserProfile()
 	}
 	
 	@IBAction func headerUsernameButtonPressed(sender: AnyObject) {
-		//go to user profile
+		goToUserProfile()
 	}
 	
 	@IBAction func moreOptionsButtonPressed(sender: AnyObject) {
@@ -89,21 +96,26 @@ class FeedPostView: UITableViewCell {
 	}
 	
 	@IBAction func commentsIconButtonPressed(sender: AnyObject) {
-		//self.presentViewController(CommentsViewController, animated: true, completion: nil)
-		//present comments table view controller
+		goToCommentsVC()
 		//present keyboard
 	}
 	
 	@IBAction func moreCommentsButtonPressed(sender: AnyObject) {
-		//present comments table view controller
+		goToCommentsVC()
 	}
 	
 	@IBAction func commentsPreviewButtonPressed(sender: AnyObject) {
-		//present comments table view controller
+		goToCommentsVC()
 	}
 	
+	// HELPER FUNCTIONS
+	
 	func goToCommentsVC() {
-		
+		self.delegate?.showComments()
+	}
+	
+	func goToUserProfile() {
+		self.delegate?.goToUserProfile()
 	}
 	
 	

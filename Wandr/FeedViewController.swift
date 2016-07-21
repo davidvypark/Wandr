@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FeedPostViewDelegate {
 	
 	var tableView: UITableView = UITableView()
 	
@@ -48,11 +48,24 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		
 		let cell = self.tableView.dequeueReusableCellWithIdentifier(FeedPostView.cellReuseIdentifier, forIndexPath: indexPath) as! FeedPostView
+		cell.delegate = self
 		
 		let currentPost = postArray[indexPath.row]
 		cell.feedPostItem = currentPost
 		
 		return cell
+	}
+	
+	//Feed Post Button Actions
+	
+	func showComments() {
+		let destinationVC = CommentsViewController()
+		navigationController?.pushViewController(destinationVC, animated: true)
+	}
+	
+	func goToUserProfile() {
+		let destinationVC = ProfileViewController()
+		navigationController?.pushViewController(destinationVC, animated: true)
 	}
 	
 }

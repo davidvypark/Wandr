@@ -12,7 +12,11 @@ class CommentsViewController: UITableViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "commentCell")
+		
 		tableView.reloadData()
+		
 	}
 	
 	override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
