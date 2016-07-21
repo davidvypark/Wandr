@@ -74,13 +74,19 @@ class ProfileHeaderViewController: UIViewController {
     
     func configureSplitLineButton(button: UIButton, withText text: String, subText: String) {
         
-        button.setTitle("\(text)\n\(subText)", forState: .Normal)
+        // This is all to bold just the TEXT part of the string
+        let nsText = "\(text)\n\(subText)" as NSString
+        let attributedStringNormal = NSMutableAttributedString(string: nsText as String,
+                                                         attributes: [NSFontAttributeName:UIFont.systemFontOfSize(UIFont.systemFontSize())])
+        let boldFontAttribute = [NSFontAttributeName: UIFont.boldSystemFontOfSize(UIFont.systemFontSize())]
         
+        attributedStringNormal.addAttributes(boldFontAttribute, range: nsText.rangeOfString(text))
+        attributedStringNormal.addAttribute(NSForegroundColorAttributeName, value: UIColor.blackColor(), range: NSMakeRange(0, nsText.length))
+        
+        button.setAttributedTitle(attributedStringNormal, forState: .Normal)
+
         button.titleLabel?.lineBreakMode = .ByWordWrapping
-        button.titleLabel?.textAlignment = .Center
-        
-        button.setTitleColor(UIColor.blackColor(), forState: .Normal)
-        button.setTitleColor(UIColor.blueColor(), forState: .Highlighted)
+        button.titleLabel?.textAlignment = .Center        
     }
     
     func setupUsernameLabelAppearance() {
@@ -130,6 +136,7 @@ class ProfileHeaderViewController: UIViewController {
             make.right.equalTo(view.snp_right).offset(-padding)
         }
         
+        // Add the post, followers, and following button to a stackview
         view.addSubview(postsButton)
         view.addSubview(followersbutton)
         view.addSubview(followingButton)
@@ -148,6 +155,7 @@ class ProfileHeaderViewController: UIViewController {
             
         }
         
+        // Edit button is below the stackview
         view.addSubview(editProfileButton)
         
         editProfileButton.snp_makeConstraints { (make) in
