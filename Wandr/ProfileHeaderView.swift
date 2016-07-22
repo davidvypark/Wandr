@@ -8,7 +8,18 @@
 
 import UIKit
 
+protocol ProfileHeaderViewDelegate: class {
+    func profilePictureButtonPressed()
+    func postsButtonPressed()
+    func followingButtonPressed()
+    func followersButtonPressed()
+    func editProfileButtonPressed()
+}
+
+
 class ProfileHeaderView: UICollectionReusableView {
+    
+    weak var delegate: ProfileHeaderViewDelegate?
     
     var username = "EMPTY USERNAME"
     var profilePicture = UIImage()
@@ -32,6 +43,7 @@ class ProfileHeaderView: UICollectionReusableView {
         backgroundColor = UIColor.whiteColor()
         setupSubviewAppearance()
         setupSubviewConstraints()
+        setupButtonTargetAction()
     }
     
     func setupSubviewAppearance() {
@@ -55,7 +67,6 @@ class ProfileHeaderView: UICollectionReusableView {
         
         // Edit Profile Button
         setupEditButtonAppearance()
-        
     }
     
     //MARK: Subview Appearance
@@ -151,6 +162,28 @@ class ProfileHeaderView: UICollectionReusableView {
             make.top.equalTo(buttonStackView.snp_bottom).offset(padding)
             make.left.equalTo(buttonStackView.snp_left).offset(-padding * 2.0)
             make.right.equalTo(buttonStackView.snp_right).offset(padding * 2.0)
+        }
+    }
+    
+    func setupButtonTargetAction() {
+        
+        profilePictureButton.addTarget(self, action: #selector(forwardButtonAction), forControlEvents: .TouchUpInside)
+        postsButton.addTarget(self, action: #selector(forwardButtonAction), forControlEvents: .TouchUpInside)
+        followersbutton.addTarget(self, action: #selector(forwardButtonAction), forControlEvents: .TouchUpInside)
+        followingButton.addTarget(self, action: #selector(forwardButtonAction), forControlEvents: .TouchUpInside)
+        editProfileButton.addTarget(self, action: #selector(forwardButtonAction), forControlEvents: .TouchUpInside)
+        
+    }
+    
+    func forwardButtonAction(sender: UIButton) {
+        
+        switch sender {
+        case profilePictureButton: delegate?.profilePictureButtonPressed()
+        case postsButton: delegate?.postsButtonPressed()
+        case followingButton: delegate?.followingButtonPressed()
+        case followersbutton: delegate?.followersButtonPressed()
+        case editProfileButton: delegate?.editProfileButtonPressed()
+        default: break // list is exhaustive
         }
         
     }

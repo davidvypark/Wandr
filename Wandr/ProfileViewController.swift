@@ -88,6 +88,8 @@ extension ProfileViewController: UICollectionViewDelegateFlowLayout, UICollectio
         case UICollectionElementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: headerIdentifier,
                                                                                    forIndexPath: indexPath) as! ProfileHeaderView
+            headerView.delegate = self
+            
             headerView.username = "Matt Amerige"
             if let profileImage = UIImage(named: "matt") {
                 headerView.profilePicture = profileImage
@@ -99,4 +101,58 @@ extension ProfileViewController: UICollectionViewDelegateFlowLayout, UICollectio
         
     }
 }
+
+extension ProfileViewController: ProfileHeaderViewDelegate {
+    
+    func profilePictureButtonPressed() {
+        print("ProfilePictureButton Pressed")
+    }
+    
+    func postsButtonPressed() {
+        print("posts button")
+    }
+    
+    func followingButtonPressed() {
+        print("following button")
+    }
+    
+    func followersButtonPressed() {
+        print("followers button")
+    }
+    
+    func editProfileButtonPressed() {
+        print("Edit button")
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
