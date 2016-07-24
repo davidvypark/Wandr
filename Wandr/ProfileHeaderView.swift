@@ -176,7 +176,6 @@ class ProfileHeaderView: UICollectionReusableView {
     }
     
     func forwardButtonAction(sender: UIButton) {
-        
         switch sender {
         case profilePictureButton: delegate?.profilePictureButtonPressed()
         case postsButton: delegate?.postsButtonPressed()
@@ -185,9 +184,5 @@ class ProfileHeaderView: UICollectionReusableView {
         case editProfileButton: delegate?.editProfileButtonPressed()
         default: break // list is exhaustive
         }
-        
     }
-
-    
-
 }

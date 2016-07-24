@@ -64,8 +64,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	}
 	
 	func goToUserProfile() {
-		let destinationVC = ProfileViewController()
-		navigationController?.pushViewController(destinationVC, animated: true)
+        /** Hi David -- I had to comment this out because I changed the ProfileViewController's initialization. 
+         It now requires as user object, since it doesn't make sense to have a profile without any user. You'll have to somehow get the user object here
+         and pass it forward for the profileVC to use
+         */
+//		let destinationVC = ProfileViewController()
+//		navigationController?.pushViewController(destinationVC, animated: true)
 	}
 	
 }

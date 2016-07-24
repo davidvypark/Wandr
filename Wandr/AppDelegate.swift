@@ -30,7 +30,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let cameraViewController = CameraViewController()
         rootTabViewController.delegate = cameraViewController
         
-        let profileViewController = ProfileViewController()
+        // Using this to create some user instances..
+        // the profileViewController has a non-optional user property, which must be provided as an argument when initializing
+        // Assuming that user1 is the current user for the app, I'm going to pass that data here just for now.
+        // Later on we should add something here to get the current user info before initializing this view controller
+        generateTestData()
+        
+        let profileViewController = ProfileViewController(withUser: user1)
         let profileNavController = UINavigationController(rootViewController: profileViewController)
         profileNavController.navigationBar.translucent = false
         profileNavController.navigationBar.opaque = true

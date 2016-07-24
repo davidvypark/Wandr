@@ -8,28 +8,35 @@
 
 import UIKit
 import SnapKit
+import MobileCoreServices
 
 class ProfileViewController: UIViewController {
    
+    let user: WandrUser
+    
     private let cellIdentifier = "Cell"
     private let headerIdentifier = "header"
     
     var collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: UICollectionViewFlowLayout())
     
-    init() {
-        
+    // Designated Initializer
+    init(withUser user: WandrUser) {
+        self.user = user
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        fatalError("init(coder:) has not been implemented")
     }
+
     
+
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         view.backgroundColor = UIColor.orangeColor()
         tabBarItem.title = "Profile"
-        navigationItem.title = "Matt Amerige"
+        navigationItem.title = user.username
         
         setupCollectionView()
     }
@@ -90,8 +97,8 @@ extension ProfileViewController: UICollectionViewDelegateFlowLayout, UICollectio
                                                                                    forIndexPath: indexPath) as! ProfileHeaderView
             headerView.delegate = self
             
-            headerView.username = "Matt Amerige"
-            if let profileImage = UIImage(named: "matt") {
+            headerView.username = user.username
+            if let profileImage = user.profilePicture {
                 headerView.profilePicture = profileImage
             }
             
@@ -102,10 +109,32 @@ extension ProfileViewController: UICollectionViewDelegateFlowLayout, UICollectio
     }
 }
 
+// MARK: - ProfileHeaderView Delegate Methods
 extension ProfileViewController: ProfileHeaderViewDelegate {
     
     func profilePictureButtonPressed() {
         print("ProfilePictureButton Pressed")
+        
+        // Show menu of different options from an action sheet
+        let actionController = UIAlertController(title: "Change Profile Photo", message: nil, preferredStyle: .ActionSheet)
+        
+        let takePhotoAction = UIAlertAction(title: "Take Photo", style: .Default, handler: { action in
+            self.presentCamera()
+        })
+        
+        let chooseFromLibraryAction = UIAlertAction(title: "Choose from Library", style: .Default, handler: { action in
+            self.presentPhotoLibrary()
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        
+        actionController.addAction(takePhotoAction)
+        actionController.addAction(chooseFromLibraryAction)
+        actionController.addAction(cancelAction)
+        
+        
+        presentViewController(actionController, animated: true, completion: nil)
+        
     }
     
     func postsButtonPressed() {
@@ -124,6 +153,36 @@ extension ProfileViewController: ProfileHeaderViewDelegate {
         print("Edit button")
     }
     
+}
+
+// MARK: - Camera Stuff (Presenting the Camera and photo library)
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func presentCamera() {
+        // present camera (for taking photos only)
+        let cameraImagePickerController = UIImagePickerController()
+        if !UIImagePickerController.isSourceTypeAvailable(.Camera) { return }
+        cameraImagePickerController.sourceType = .Camera
+        cameraImagePickerController.cameraDevice = .Front
+        cameraImagePickerController.mediaTypes = [String(kUTTypeImage)]
+        cameraImagePickerController.delegate = self
+        
+        presentViewController(cameraImagePickerController, animated: true, completion: nil)
+    }
+    
+    func presentPhotoLibrary() {
+        let cameraImagePickerController = UIImagePickerController()
+        if !UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) { return }
+        cameraImagePickerController.sourceType = .PhotoLibrary
+        cameraImagePickerController.delegate = self
+        presentViewController(cameraImagePickerController, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        
+        user.profilePicture = image
+        collectionView.reloadData()
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 }
 
 
