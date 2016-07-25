@@ -10,15 +10,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedPostView" customModule="Wandr" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FeedCell" rowHeight="1061" id="AY8-Yv-CMg" customClass="FeedPostView" customModule="Wandr" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="544" height="1061"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FeedCell" rowHeight="1127" id="AY8-Yv-CMg" customClass="FeedPostView" customModule="Wandr" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="544" height="1127"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AY8-Yv-CMg" id="mVV-Hf-nCw">
-                <rect key="frame" x="0.0" y="0.0" width="544" height="1060.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="544" height="1126.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUa-qm-HAr">
-                        <rect key="frame" x="8" y="864" width="528" height="37.5"/>
+                        <rect key="frame" x="8" y="930.5" width="528" height="37.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="zUa-qm-HAr" secondAttribute="height" multiplier="210:15" id="Awl-4h-pZE"/>
                         </constraints>
@@ -31,7 +31,7 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="likes Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJA-JM-MHj">
-                        <rect key="frame" x="8" y="675" width="528" height="38"/>
+                        <rect key="frame" x="8" y="741.5" width="528" height="38"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="kJA-JM-MHj" secondAttribute="height" multiplier="210:15" id="vwa-wD-dFY"/>
                         </constraints>
@@ -40,7 +40,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcI-5l-Oqk">
-                        <rect key="frame" x="8" y="713" width="528" height="151"/>
+                        <rect key="frame" x="8" y="779.5" width="528" height="151"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="fcI-5l-Oqk" secondAttribute="height" multiplier="105:30" id="isi-d1-AcV"/>
                         </constraints>
@@ -56,7 +56,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFN-kl-1Gy">
-                        <rect key="frame" x="8" y="901" width="528" height="151"/>
+                        <rect key="frame" x="8" y="967.5" width="528" height="151"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="AFN-kl-1Gy" secondAttribute="height" multiplier="105:30" id="Uyl-xL-F9L"/>
                         </constraints>
@@ -72,7 +72,7 @@
                         <rect key="frame" x="0.0" y="85.5" width="544" height="544"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="col-Pe-RtB">
-                                <rect key="frame" x="0.0" y="5" width="544" height="539"/>
+                                <rect key="frame" x="0.0" y="10" width="544" height="534"/>
                             </imageView>
                         </subviews>
                         <constraints>
@@ -80,11 +80,11 @@
                             <constraint firstItem="col-Pe-RtB" firstAttribute="leading" secondItem="vDt-5r-IHo" secondAttribute="leading" id="aB2-rD-KRm"/>
                             <constraint firstAttribute="bottom" secondItem="col-Pe-RtB" secondAttribute="bottom" id="h47-Db-Mks"/>
                             <constraint firstAttribute="width" secondItem="vDt-5r-IHo" secondAttribute="height" multiplier="1:1" id="s6m-X8-WN5"/>
-                            <constraint firstItem="col-Pe-RtB" firstAttribute="top" secondItem="vDt-5r-IHo" secondAttribute="top" constant="5" id="tS5-hH-1F2"/>
+                            <constraint firstItem="col-Pe-RtB" firstAttribute="top" secondItem="vDt-5r-IHo" secondAttribute="top" constant="10" id="tS5-hH-1F2"/>
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qw7-gg-G9R">
-                        <rect key="frame" x="8" y="629" width="30" height="45.5"/>
+                        <rect key="frame" x="8" y="629" width="30" height="112"/>
                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                         <state key="normal" title="❤️"/>
                         <connections>
@@ -92,7 +92,10 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TqG-Rx-G3M">
-                        <rect key="frame" x="48" y="633" width="30" height="42"/>
+                        <rect key="frame" x="48" y="629.5" width="80" height="112"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="TqG-Rx-G3M" secondAttribute="height" multiplier="5:7" id="dh4-hh-iaM"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                         <state key="normal" title="💬"/>
                         <connections>
@@ -100,7 +103,10 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUt-JB-qAe">
-                        <rect key="frame" x="88" y="633" width="30" height="42"/>
+                        <rect key="frame" x="138" y="629.5" width="80" height="112"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="cUt-JB-qAe" secondAttribute="height" multiplier="5:7" id="0Gw-lE-ans"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                         <state key="normal" title="⤴️"/>
                         <connections>
@@ -126,8 +132,8 @@
                             <action selector="moreOptionsButtonPressed:" destination="AY8-Yv-CMg" eventType="touchUpInside" id="5Rt-lJ-jwT"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PH-cn-yGR">
-                        <rect key="frame" x="93" y="8" width="388.5" height="77.5"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PH-cn-yGR">
+                        <rect key="frame" x="95.5" y="8" width="388.5" height="77.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="8PH-cn-yGR" secondAttribute="height" multiplier="75:15" id="ylV-pe-dmN"/>
                         </constraints>
@@ -159,6 +165,7 @@
                     <constraint firstItem="DFE-sA-pgN" firstAttribute="height" secondItem="8PH-cn-yGR" secondAttribute="height" id="NOp-dh-rXN"/>
                     <constraint firstAttribute="bottomMargin" secondItem="AFN-kl-1Gy" secondAttribute="bottom" id="Pyy-GM-Jnv"/>
                     <constraint firstItem="qw7-gg-G9R" firstAttribute="leading" secondItem="mVV-Hf-nCw" secondAttribute="leadingMargin" id="QnK-cP-mwM"/>
+                    <constraint firstItem="cUt-JB-qAe" firstAttribute="height" secondItem="TqG-Rx-G3M" secondAttribute="height" id="RA4-kx-cAK"/>
                     <constraint firstItem="TqG-Rx-G3M" firstAttribute="leading" secondItem="qw7-gg-G9R" secondAttribute="trailing" constant="10" id="Sc5-Zt-DFC"/>
                     <constraint firstAttribute="trailingMargin" secondItem="kJA-JM-MHj" secondAttribute="trailing" id="T7F-1c-QtA"/>
                     <constraint firstItem="qw7-gg-G9R" firstAttribute="top" secondItem="vDt-5r-IHo" secondAttribute="bottom" id="UmE-wY-NSz"/>
@@ -170,6 +177,7 @@
                     <constraint firstItem="cUt-JB-qAe" firstAttribute="leading" secondItem="TqG-Rx-G3M" secondAttribute="trailing" constant="10" id="eug-a3-ieT"/>
                     <constraint firstItem="fcI-5l-Oqk" firstAttribute="top" secondItem="kJA-JM-MHj" secondAttribute="bottom" id="gAB-lb-cB2"/>
                     <constraint firstItem="8PH-cn-yGR" firstAttribute="leading" secondItem="mVV-Hf-nCw" secondAttribute="leadingMargin" id="gTo-9I-dhs"/>
+                    <constraint firstItem="TqG-Rx-G3M" firstAttribute="height" secondItem="qw7-gg-G9R" secondAttribute="height" id="hVY-H7-cSz"/>
                     <constraint firstItem="cUt-JB-qAe" firstAttribute="bottom" secondItem="TqG-Rx-G3M" secondAttribute="bottom" id="mVi-my-bba"/>
                     <constraint firstItem="8PH-cn-yGR" firstAttribute="leading" secondItem="ltH-RO-FuV" secondAttribute="trailing" constant="10" id="plD-aj-xI0"/>
                     <constraint firstItem="fcI-5l-Oqk" firstAttribute="leading" secondItem="mVV-Hf-nCw" secondAttribute="leadingMargin" id="uOV-xG-KnA"/>
@@ -201,7 +209,7 @@
                 <outlet property="usernameButton" destination="8PH-cn-yGR" id="9mh-TO-1Q1"/>
                 <outlet property="viewAllCommentsButton" destination="zUa-qm-HAr" id="3Fe-pi-dqz"/>
             </connections>
-            <point key="canvasLocation" x="738" y="-25.5"/>
+            <point key="canvasLocation" x="738" y="7.5"/>
         </tableViewCell>
     </objects>
 </document>
