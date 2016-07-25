@@ -6,7 +6,8 @@ target 'Wandr' do
   use_frameworks!
 
   pod 'SnapKit', '~> 0.15.0'
-
+  pod 'Firebase'
+  
   # Pods for Wandr
 
 end

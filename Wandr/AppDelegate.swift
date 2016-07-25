@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -54,6 +54,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.rootViewController = rootTabViewController
             window.makeKeyAndVisible()
         }
+        
+        // Firebase importing
+        FIRApp.configure()
+        
 		return true
 	}
 }
