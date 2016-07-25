@@ -13,6 +13,10 @@
 		C95E13931D3FB92A0024E73A /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95E13921D3FB92A0024E73A /* UIImageExtension.swift */; };
 		C95E13C81D417F350024E73A /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95E13C71D417F350024E73A /* ProfileHeaderView.swift */; };
 		C9E72A941D4642A2002453B5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9E72A931D4642A2002453B5 /* GoogleService-Info.plist */; };
+		C9E72A961D464559002453B5 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E72A951D464559002453B5 /* EditProfileViewController.swift */; };
+		C9E72A981D464C0F002453B5 /* FollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E72A971D464C0F002453B5 /* FollowersViewController.swift */; };
+		C9E72A9A1D464C6D002453B5 /* FollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E72A991D464C6D002453B5 /* FollowingViewController.swift */; };
+		C9E72A9C1D4658CB002453B5 /* String+BoldString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E72A9B1D4658CB002453B5 /* String+BoldString.swift */; };
 		F8DE6DCB9DB3EA52AF5AEB73 /* Pods_Wandr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204CF253C7CBCEC4A265D158 /* Pods_Wandr.framework */; };
 		FFF8F2EC1D3E675F00F1575D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8F2EB1D3E675F00F1575D /* AppDelegate.swift */; };
 		FFF8F2F31D3E675F00F1575D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFF8F2F21D3E675F00F1575D /* Assets.xcassets */; };
@@ -35,6 +39,10 @@
 		C95E13921D3FB92A0024E73A /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		C95E13C71D417F350024E73A /* ProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		C9E72A931D4642A2002453B5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C9E72A951D464559002453B5 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		C9E72A971D464C0F002453B5 /* FollowersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersViewController.swift; sourceTree = "<group>"; };
+		C9E72A991D464C6D002453B5 /* FollowingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowingViewController.swift; sourceTree = "<group>"; };
+		C9E72A9B1D4658CB002453B5 /* String+BoldString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+BoldString.swift"; sourceTree = "<group>"; };
 		E70255C539ED7CB907AB8D39 /* Pods-Wandr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wandr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wandr/Pods-Wandr.debug.xcconfig"; sourceTree = "<group>"; };
 		FFF8F2E81D3E675F00F1575D /* Wandr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wandr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFF8F2EB1D3E675F00F1575D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +94,9 @@
 			children = (
 				C95E13C71D417F350024E73A /* ProfileHeaderView.swift */,
 				C9519BC21D3E740D008DBA87 /* ProfileViewController.swift */,
+				C9E72A951D464559002453B5 /* EditProfileViewController.swift */,
+				C9E72A971D464C0F002453B5 /* FollowersViewController.swift */,
+				C9E72A991D464C6D002453B5 /* FollowingViewController.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -166,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				C95E13921D3FB92A0024E73A /* UIImageExtension.swift */,
+				C9E72A9B1D4658CB002453B5 /* String+BoldString.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -341,7 +353,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9E72A961D464559002453B5 /* EditProfileViewController.swift in Sources */,
+				C9E72A9A1D464C6D002453B5 /* FollowingViewController.swift in Sources */,
 				C9519BC31D3E740D008DBA87 /* ProfileViewController.swift in Sources */,
+				C9E72A981D464C0F002453B5 /* FollowersViewController.swift in Sources */,
 				C9519BC11D3E7406008DBA87 /* CameraViewController.swift in Sources */,
 				FFF8F3071D3EDDDA00F1575D /* FeedPostView.swift in Sources */,
 				FFF8F3031D3EBB2800F1575D /* WandrUser.swift in Sources */,
@@ -350,6 +365,7 @@
 				FFF8F2FE1D3EB70000F1575D /* WandrPost.swift in Sources */,
 				C95E13C81D417F350024E73A /* ProfileHeaderView.swift in Sources */,
 				FFF8F3411D415D7C00F1575D /* CommentsViewController.swift in Sources */,
+				C9E72A9C1D4658CB002453B5 /* String+BoldString.swift in Sources */,
 				C95E13931D3FB92A0024E73A /* UIImageExtension.swift in Sources */,
 				FFF8F3011D3EB94000F1575D /* TestDataUsers.swift in Sources */,
 				FFF8F2EC1D3E675F00F1575D /* AppDelegate.swift in Sources */,

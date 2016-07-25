@@ -37,7 +37,6 @@ class ProfileHeaderView: UICollectionReusableView {
     let editProfileButton = UIButton(type: .System)
     
     
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         backgroundColor = UIColor.whiteColor()
@@ -48,7 +47,7 @@ class ProfileHeaderView: UICollectionReusableView {
     
     func setupSubviewAppearance() {
         // Profile Picture
-        profilePictureButton.setImage(profilePicture.circle, forState: .Normal)
+        setupProfilePictureButton()
         
         // Username Label
         setupUsernameLabelAppearance()
@@ -71,6 +70,11 @@ class ProfileHeaderView: UICollectionReusableView {
     
     //MARK: Subview Appearance
     
+    func setupProfilePictureButton() {
+        profilePictureButton.setImage(profilePicture.circle, forState: .Normal)
+        addSubview(profilePictureButton)
+    }
+    
     func configureSplitLineButton(button: UIButton, withText text: String, subText: String) {
         
         // This is all to bold just the TEXT part of the string
@@ -86,11 +90,14 @@ class ProfileHeaderView: UICollectionReusableView {
         
         button.titleLabel?.lineBreakMode = .ByWordWrapping
         button.titleLabel?.textAlignment = .Center
+        
+        addSubview(button)
     }
     
     func setupUsernameLabelAppearance() {
         usernameLabel.text = username
         usernameLabel.font = UIFont.boldSystemFontOfSize(UIFont.systemFontSize())
+        addSubview(usernameLabel)
     }
     
     func setupAboutLabelAppearance() {
@@ -98,21 +105,26 @@ class ProfileHeaderView: UICollectionReusableView {
         aboutLabel.font = UIFont.systemFontOfSize(UIFont.systemFontSize())
         aboutLabel.lineBreakMode = .ByWordWrapping
         aboutLabel.numberOfLines = 2
+        addSubview(aboutLabel)
     }
     
     func setupEditButtonAppearance() {
-        editProfileButton.setTitle("Edit Profile", forState: .Normal)
-        editProfileButton.backgroundColor = UIColor.lightGrayColor()
-        editProfileButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        
+        let buttonTitle = "Edit Profile".boldedAttributedString
+        buttonTitle.addAttribute(NSForegroundColorAttributeName, value: UIColor.blackColor(), range: NSMakeRange(0, buttonTitle.length))
+        editProfileButton.setAttributedTitle(buttonTitle, forState: .Normal)
+        editProfileButton.backgroundColor = UIColor.groupTableViewBackgroundColor()
+        addSubview(editProfileButton)
     }
 
     //MARK: Constraints
     func setupSubviewConstraints() {
         
+        
         // Add the profile picture to the upper left, with a padding on 8 points on the top and left
         // The profile should take up about half of the view height.
         let padding: CGFloat = 8
-        addSubview(profilePictureButton)
+     
         profilePictureButton.snp_makeConstraints { (make) in
             make.height.equalTo(self.snp_height).dividedBy(2.5)
             make.width.equalTo(self.snp_height).dividedBy(2.5)
@@ -121,14 +133,12 @@ class ProfileHeaderView: UICollectionReusableView {
         }
         
         // username should be 8 points below the profile picture
-        addSubview(usernameLabel)
         usernameLabel.snp_makeConstraints { (make) in
             make.left.equalTo(self.snp_left).offset(padding)
             make.top.equalTo(profilePictureButton.snp_bottom).offset(padding)
         }
         
-        // Blib should be 8 points below the name, extending to the edges of the super view (minus the padding)
-        addSubview(aboutLabel)
+        // About should be 8 points below the name, extending to the edges of the super view (minus the padding)
         aboutLabel.snp_makeConstraints { (make) in
             make.top.equalTo(usernameLabel.snp_bottom).offset(padding)
             make.left.equalTo(self.snp_left).offset(padding)
@@ -136,11 +146,7 @@ class ProfileHeaderView: UICollectionReusableView {
         }
         
         // Add the post, followers, and following button to a stackview
-        addSubview(postsButton)
-        addSubview(followersbutton)
-        addSubview(followingButton)
         addSubview(buttonStackView)
-        
         buttonStackView.addArrangedSubview(postsButton)
         buttonStackView.addArrangedSubview(followersbutton)
         buttonStackView.addArrangedSubview(followingButton)
@@ -151,11 +157,9 @@ class ProfileHeaderView: UICollectionReusableView {
         buttonStackView.snp_makeConstraints { (make) in
             make.top.equalTo(self.snp_top).offset(padding)
             make.right.equalTo(self.snp_right).offset(-padding * 4.0)
-            
         }
         
         // Edit button is below the stackview
-        addSubview(editProfileButton)
         
         editProfileButton.snp_makeConstraints { (make) in
             make.centerX.equalTo(buttonStackView.snp_centerX)
@@ -163,6 +167,7 @@ class ProfileHeaderView: UICollectionReusableView {
             make.left.equalTo(buttonStackView.snp_left).offset(-padding * 2.0)
             make.right.equalTo(buttonStackView.snp_right).offset(padding * 2.0)
         }
+        
     }
     
     func setupButtonTargetAction() {

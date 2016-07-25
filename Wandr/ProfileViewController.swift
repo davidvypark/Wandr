@@ -142,15 +142,18 @@ extension ProfileViewController: ProfileHeaderViewDelegate {
     }
     
     func followingButtonPressed() {
-        print("following button")
+        let followingVC = FollowingViewController()
+        presentViewController(followingVC, animated: true, completion: nil)
     }
     
     func followersButtonPressed() {
-        print("followers button")
+        let followersVC = FollowersViewController()
+        presentViewController(followersVC, animated: true, completion: nil)
     }
     
     func editProfileButtonPressed() {
-        print("Edit button")
+        let editProfileVC = EditProfileViewController()
+        presentViewController(editProfileVC, animated: true, completion: nil)
     }
     
 }
@@ -184,34 +187,3 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         dismissViewControllerAnimated(true, completion: nil)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
