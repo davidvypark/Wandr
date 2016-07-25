@@ -18,6 +18,7 @@
 		C9E72A9A1D464C6D002453B5 /* FollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E72A991D464C6D002453B5 /* FollowingViewController.swift */; };
 		C9E72A9C1D4658CB002453B5 /* String+BoldString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E72A9B1D4658CB002453B5 /* String+BoldString.swift */; };
 		F8DE6DCB9DB3EA52AF5AEB73 /* Pods_Wandr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204CF253C7CBCEC4A265D158 /* Pods_Wandr.framework */; };
+		FF2F10641D46D5840092D5A4 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2F10631D46D5840092D5A4 /* LogInViewController.swift */; };
 		FFF8F2EC1D3E675F00F1575D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8F2EB1D3E675F00F1575D /* AppDelegate.swift */; };
 		FFF8F2F31D3E675F00F1575D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFF8F2F21D3E675F00F1575D /* Assets.xcassets */; };
 		FFF8F2FE1D3EB70000F1575D /* WandrPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8F2FD1D3EB70000F1575D /* WandrPost.swift */; };
@@ -44,6 +45,7 @@
 		C9E72A991D464C6D002453B5 /* FollowingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowingViewController.swift; sourceTree = "<group>"; };
 		C9E72A9B1D4658CB002453B5 /* String+BoldString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+BoldString.swift"; sourceTree = "<group>"; };
 		E70255C539ED7CB907AB8D39 /* Pods-Wandr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wandr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wandr/Pods-Wandr.debug.xcconfig"; sourceTree = "<group>"; };
+		FF2F10631D46D5840092D5A4 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		FFF8F2E81D3E675F00F1575D /* Wandr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wandr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFF8F2EB1D3E675F00F1575D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFF8F2F21D3E675F00F1575D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,6 +103,14 @@
 			name = Profile;
 			sourceTree = "<group>";
 		};
+		FF2F10651D46D58F0092D5A4 /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				FF2F10631D46D5840092D5A4 /* LogInViewController.swift */,
+			);
+			name = LogIn;
+			sourceTree = "<group>";
+		};
 		FFF8F2DF1D3E675F00F1575D = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +134,7 @@
 			children = (
 				C9E72A931D4642A2002453B5 /* GoogleService-Info.plist */,
 				FFF8F2EB1D3E675F00F1575D /* AppDelegate.swift */,
+				FF2F10651D46D58F0092D5A4 /* LogIn */,
 				C95E138D1D3F97610024E73A /* Profile */,
 				FFF8F3441D416FA100F1575D /* Camera */,
 				FFF8F3431D416F8F00F1575D /* Comments */,
@@ -357,6 +368,7 @@
 				C9E72A9A1D464C6D002453B5 /* FollowingViewController.swift in Sources */,
 				C9519BC31D3E740D008DBA87 /* ProfileViewController.swift in Sources */,
 				C9E72A981D464C0F002453B5 /* FollowersViewController.swift in Sources */,
+				FF2F10641D46D5840092D5A4 /* LogInViewController.swift in Sources */,
 				C9519BC11D3E7406008DBA87 /* CameraViewController.swift in Sources */,
 				FFF8F3071D3EDDDA00F1575D /* FeedPostView.swift in Sources */,
 				FFF8F3031D3EBB2800F1575D /* WandrUser.swift in Sources */,
