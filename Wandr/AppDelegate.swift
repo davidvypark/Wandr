@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,8 +19,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
+
+        // Configure Firebase
+        FIRApp.configure()
+        
+        // Configure Facebook
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
 		
-		//Create LoginViewController as Root Controller that segues
+        setupViewControllers()
+ 
+		return true
+	}
+    
+    func setupViewControllers() {
+        // Testing fb login
+        let rootFBLoginViewController = LogInViewController()
+        
+        // Create LoginViewController as Root Controller that segues
         
         // Root is a TabBarController
         let rootTabViewController = UITabBarController()
@@ -49,16 +65,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         rootTabViewController.tabBar.items?[0].title = "Feed"
         rootTabViewController.tabBar.items?[1].title = "Camera"
         rootTabViewController.tabBar.items?[2].title = "Profile"
-    
+        
         if let window = window {
-            window.rootViewController = rootTabViewController
+            window.rootViewController = rootFBLoginViewController
             window.makeKeyAndVisible()
         }
         
-        // Firebase importing
-        FIRApp.configure()
-        
-		return true
-	}
+    }
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        let handled = FBSDKApplicationDelegate.sharedInstance().application(application,
+                                                                            openURL: url,
+                                                                            sourceApplication: sourceApplication,
+                                                                            annotation: annotation)
+        return handled
+    }
 }
 

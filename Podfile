@@ -7,6 +7,10 @@ target 'Wandr' do
 
   pod 'SnapKit', '~> 0.15.0'
   pod 'Firebase'
+  pod 'Firebase/Auth'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKLoginKit'
+  pod 'FBSDKShareKit'
   
   # Pods for Wandr
 
