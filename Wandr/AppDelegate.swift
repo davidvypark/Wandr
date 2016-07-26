@@ -37,7 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let rootViewController: UIViewController
         
         if let user = FIRAuth.auth()?.currentUser {
-            print("User signed in \(user)")
+            print("displayname: \(user.displayName)")
+            print("photoURL: \(user.photoURL)")
+            
             rootViewController = configureTabBarForRoot()
         }
         else {

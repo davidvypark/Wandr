@@ -9,10 +9,14 @@
 import UIKit
 import SnapKit
 import MobileCoreServices
+import Firebase
 
 class ProfileViewController: UIViewController {
    
     let user: WandrUser
+    // this should eventually just be a passed in parameter, 
+    // because we don't always want to use the current user for a profile (you can be looking at someone else's profile)
+    let currentUser = FIRAuth.auth()?.currentUser
     
     private let cellIdentifier = "Cell"
     private let headerIdentifier = "header"
@@ -97,9 +101,9 @@ extension ProfileViewController: UICollectionViewDelegateFlowLayout, UICollectio
                                                                                    forIndexPath: indexPath) as! ProfileHeaderView
             headerView.delegate = self
             
-            headerView.username = user.username
-            if let profileImage = user.profilePicture {
+            if let profileImage = user.profilePicture, displayName = currentUser?.displayName {
                 headerView.profilePicture = profileImage
+                headerView.username = displayName
             }
             
             return headerView

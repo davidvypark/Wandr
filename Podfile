@@ -8,6 +8,8 @@ target 'Wandr' do
   pod 'SnapKit', '~> 0.15.0'
   pod 'Firebase'
   pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Database'
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
   pod 'FBSDKShareKit'
