@@ -26,17 +26,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Configure Facebook
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
 		
+        // Adds the appropriate root view controller
         setupViewControllers()
  
 		return true
 	}
     
     func setupViewControllers() {
-        // Testing fb login
-        let rootFBLoginViewController = LogInViewController()
         
-        // Create LoginViewController as Root Controller that segues
+        let rootViewController: UIViewController
         
+        if let user = FIRAuth.auth()?.currentUser {
+            print("User signed in \(user)")
+            rootViewController = configureTabBarForRoot()
+        }
+        else {
+            print("No user signed in")
+            rootViewController = LogInViewController()
+        }
+        
+        if let window = window {
+            window.rootViewController = rootViewController
+            window.makeKeyAndVisible()
+        }
+    }
+    
+    func configureTabBarForRoot() -> UIViewController {
         // Root is a TabBarController
         let rootTabViewController = UITabBarController()
         
@@ -65,12 +80,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         rootTabViewController.tabBar.items?[0].title = "Feed"
         rootTabViewController.tabBar.items?[1].title = "Camera"
         rootTabViewController.tabBar.items?[2].title = "Profile"
-        
-        if let window = window {
-            window.rootViewController = rootFBLoginViewController
-            window.makeKeyAndVisible()
-        }
-        
+
+        return rootTabViewController
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {

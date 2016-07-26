@@ -39,6 +39,10 @@ extension LogInViewController: FBSDKLoginButtonDelegate {
         FIRAuth.auth()?.signInWithCredential(credential, completion: { (user, error) in
             if error == nil {
                 print("successfully logged in")
+                // Push to the main app
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                let mainVC = appDelegate.configureTabBarForRoot()
+                self.presentViewController(mainVC, animated: true, completion: nil)
             }
         })
     }
