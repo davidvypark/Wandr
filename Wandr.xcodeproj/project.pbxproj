@@ -19,6 +19,7 @@
 		C9E72A9C1D4658CB002453B5 /* String+BoldString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E72A9B1D4658CB002453B5 /* String+BoldString.swift */; };
 		F8DE6DCB9DB3EA52AF5AEB73 /* Pods_Wandr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204CF253C7CBCEC4A265D158 /* Pods_Wandr.framework */; };
 		FF2F10641D46D5840092D5A4 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2F10631D46D5840092D5A4 /* LogInViewController.swift */; };
+		FF9707501D49005C00B668DB /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF97074F1D49005C00B668DB /* UIColorExtensions.swift */; };
 		FFF8F2EC1D3E675F00F1575D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8F2EB1D3E675F00F1575D /* AppDelegate.swift */; };
 		FFF8F2F31D3E675F00F1575D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFF8F2F21D3E675F00F1575D /* Assets.xcassets */; };
 		FFF8F2FE1D3EB70000F1575D /* WandrPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8F2FD1D3EB70000F1575D /* WandrPost.swift */; };
@@ -46,6 +47,7 @@
 		C9E72A9B1D4658CB002453B5 /* String+BoldString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+BoldString.swift"; sourceTree = "<group>"; };
 		E70255C539ED7CB907AB8D39 /* Pods-Wandr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wandr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wandr/Pods-Wandr.debug.xcconfig"; sourceTree = "<group>"; };
 		FF2F10631D46D5840092D5A4 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		FF97074F1D49005C00B668DB /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		FFF8F2E81D3E675F00F1575D /* Wandr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wandr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFF8F2EB1D3E675F00F1575D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFF8F2F21D3E675F00F1575D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 		FFF8F3451D416FF600F1575D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FF97074F1D49005C00B668DB /* UIColorExtensions.swift */,
 				C95E13921D3FB92A0024E73A /* UIImageExtension.swift */,
 				C9E72A9B1D4658CB002453B5 /* String+BoldString.swift */,
 			);
@@ -373,6 +376,7 @@
 				FFF8F3071D3EDDDA00F1575D /* FeedPostView.swift in Sources */,
 				FFF8F3031D3EBB2800F1575D /* WandrUser.swift in Sources */,
 				FFF8F33F1D4156EA00F1575D /* PostComment.swift in Sources */,
+				FF9707501D49005C00B668DB /* UIColorExtensions.swift in Sources */,
 				C9519BBF1D3E73FA008DBA87 /* FeedViewController.swift in Sources */,
 				FFF8F2FE1D3EB70000F1575D /* WandrPost.swift in Sources */,
 				C95E13C81D417F350024E73A /* ProfileHeaderView.swift in Sources */,
