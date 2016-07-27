@@ -1,0 +1,69 @@
+{
+  // Users are organized by a user uuid
+  "users": {
+    "user_uuid": {
+      "display_name": "Blah1",
+      "followers": {
+        "follower1": "uuid string",
+        "follower2": "uuid string"
+      },
+      "following": {
+        "following1": "uuid string",
+        "following2": "uuid string"
+      },
+      "follower_count": 52,
+      "post_count": 10,
+      "following_count": 100,
+      "photo_reference_path": "/this/is/where/the/photo/lives"
+    }
+  }
+  
+  // posts are organized by user uuid, so we can easily find a post that belongs to a particular user
+  "posts": {
+    "user_uuid": {
+      "post_uuid": { //childByAutoId is auto indexed with timestamp
+        "post": {
+          "caption": "this is the caption"
+          "media_reference_path": "/this/is/where/the/media/lives"
+          "like_count": 100
+          "location": coordinates
+          "upvote": 300
+          "downvote": 100
+          "comments_count": 100
+        }
+      } 
+    } 
+  }
+
+  // comments are organized by post_uuid
+  "comments" {
+    "post_uuid": {
+      "user_display_name": "user_uuid"
+      "content": "this is a comment"
+    }
+  }
+}
+
+
+
+
+// Users have..
+posts
+followers
+following
+displayname
+photo
+
+// posts have
+comments
+media
+a user
+likes
+
+// comments have
+a post
+a user
+content
+
+// Common ways you probably want the data
+The feed will want the latests posts from the users you follow
