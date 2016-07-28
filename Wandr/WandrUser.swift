@@ -12,9 +12,14 @@ class WandrUser {
     
     var username: String
     var profilePicture: UIImage?
-    
-    init(username: String) {
+	var bio: String?
+	var currentCity: String?
+	
+	
+	init(username: String, profilePicture: UIImage, bio: String, currentCity: String) {
         self.username = username
-    }
-    
+		self.profilePicture = profilePicture
+		self.bio = bio
+		self.currentCity = currentCity
+	}
 }

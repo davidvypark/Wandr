@@ -33,7 +33,7 @@ extension LogInViewController: FBSDKLoginButtonDelegate {
             print(error)
             return
         }
-        
+		
         let credential = FIRFacebookAuthProvider.credentialWithAccessToken(FBSDKAccessToken.currentAccessToken().tokenString)
 
         FIRAuth.auth()?.signInWithCredential(credential, completion: { (user, error) in

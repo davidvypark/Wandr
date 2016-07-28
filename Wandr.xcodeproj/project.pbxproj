@@ -203,7 +203,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFF8F2FA1D3E675F00F1575D /* Build configuration list for PBXNativeTarget "Wandr" */;
 			buildPhases = (
-				D120B5B3D304DFAFCDAAA982 /* 📦 Check Pods Manifest.lock */,
+				D120B5B3D304DFAFCDAAA982 /* [CP] Check Pods Manifest.lock */,
 				24D4A51CAA629D085B411872 /* [CP] Check Pods Manifest.lock */,
 				FFF8F2E41D3E675F00F1575D /* Sources */,
 				FFF8F2E51D3E675F00F1575D /* Frameworks */,
@@ -330,14 +330,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wandr/Pods-Wandr-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D120B5B3D304DFAFCDAAA982 /* 📦 Check Pods Manifest.lock */ = {
+		D120B5B3D304DFAFCDAAA982 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
