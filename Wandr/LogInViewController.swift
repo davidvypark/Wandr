@@ -29,12 +29,15 @@ class LogInViewController: UIViewController {
 
 extension LogInViewController: FBSDKLoginButtonDelegate {
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError?) {
+        
         if let error = error {
             print(error)
             return
         }
+        
+        guard let token = FBSDKAccessToken.currentAccessToken() else { return }
 		
-        let credential = FIRFacebookAuthProvider.credentialWithAccessToken(FBSDKAccessToken.currentAccessToken().tokenString)
+        let credential = FIRFacebookAuthProvider.credentialWithAccessToken(token.tokenString)
 
         FIRAuth.auth()?.signInWithCredential(credential, completion: { (user, error) in
             if error == nil {
@@ -55,28 +58,25 @@ extension LogInViewController: FBSDKLoginButtonDelegate {
     }
     
     func setData(forUser user: FIRUser) {
-        //TODO: pull data for user's profile picture that is generated from FB and put it in the firebase storage
+        //TODO: pull data for user's profile picture that is generated from FB and put it in the firebase storage/database
         // profile pictures will not be synced with FB aside from the first login, just to populate the profile.
         // After that the user can change the photo to whatever they like
+
+            
+
     }
+    func setPhotoDataForURL(url: NSURL?) {
+        
+        guard let url = url else { return }
+        
+        let session = NSURLSession.sharedSession()
+        let dataTask = session.dataTaskWithURL(url) { (data, response, error) in
+            
+        }
+        dataTask.resume()
+    }
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
