@@ -19,6 +19,9 @@
 		C9E72A9C1D4658CB002453B5 /* String+BoldString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E72A9B1D4658CB002453B5 /* String+BoldString.swift */; };
 		F8DE6DCB9DB3EA52AF5AEB73 /* Pods_Wandr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204CF253C7CBCEC4A265D158 /* Pods_Wandr.framework */; };
 		FF2F10641D46D5840092D5A4 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2F10631D46D5840092D5A4 /* LogInViewController.swift */; };
+		FF3616BA1D4A4FF500050AF8 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3616B71D4A4FF500050AF8 /* FBSDKCoreKit.framework */; };
+		FF3616BB1D4A4FF500050AF8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3616B81D4A4FF500050AF8 /* FBSDKLoginKit.framework */; };
+		FF3616BC1D4A4FF500050AF8 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3616B91D4A4FF500050AF8 /* FBSDKShareKit.framework */; };
 		FF9707501D49005C00B668DB /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF97074F1D49005C00B668DB /* UIColorExtensions.swift */; };
 		FFF8F2EC1D3E675F00F1575D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8F2EB1D3E675F00F1575D /* AppDelegate.swift */; };
 		FFF8F2F31D3E675F00F1575D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFF8F2F21D3E675F00F1575D /* Assets.xcassets */; };
@@ -47,6 +50,9 @@
 		C9E72A9B1D4658CB002453B5 /* String+BoldString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+BoldString.swift"; sourceTree = "<group>"; };
 		E70255C539ED7CB907AB8D39 /* Pods-Wandr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wandr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wandr/Pods-Wandr.debug.xcconfig"; sourceTree = "<group>"; };
 		FF2F10631D46D5840092D5A4 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		FF3616B71D4A4FF500050AF8 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/Wandr-ejohifvcxjbbmvftnqwimqckjhcu/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		FF3616B81D4A4FF500050AF8 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/Wandr-ejohifvcxjbbmvftnqwimqckjhcu/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		FF3616B91D4A4FF500050AF8 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/Wandr-ejohifvcxjbbmvftnqwimqckjhcu/Build/Products/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework"; sourceTree = "<group>"; };
 		FF97074F1D49005C00B668DB /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		FFF8F2E81D3E675F00F1575D /* Wandr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wandr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFF8F2EB1D3E675F00F1575D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +73,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF3616BA1D4A4FF500050AF8 /* FBSDKCoreKit.framework in Frameworks */,
+				FF3616BB1D4A4FF500050AF8 /* FBSDKLoginKit.framework in Frameworks */,
+				FF3616BC1D4A4FF500050AF8 /* FBSDKShareKit.framework in Frameworks */,
 				FFF8F33D1D4106C800F1575D /* SnapKit.framework in Frameworks */,
 				F8DE6DCB9DB3EA52AF5AEB73 /* Pods_Wandr.framework in Frameworks */,
 			);
@@ -78,6 +87,9 @@
 		60D1DCEFF6D83F9CEC474902 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FF3616B71D4A4FF500050AF8 /* FBSDKCoreKit.framework */,
+				FF3616B81D4A4FF500050AF8 /* FBSDKLoginKit.framework */,
+				FF3616B91D4A4FF500050AF8 /* FBSDKShareKit.framework */,
 				FFF8F33C1D4106C800F1575D /* SnapKit.framework */,
 				204CF253C7CBCEC4A265D158 /* Pods_Wandr.framework */,
 			);
@@ -203,15 +215,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFF8F2FA1D3E675F00F1575D /* Build configuration list for PBXNativeTarget "Wandr" */;
 			buildPhases = (
-				D120B5B3D304DFAFCDAAA982 /* [CP] Check Pods Manifest.lock */,
-				24D4A51CAA629D085B411872 /* [CP] Check Pods Manifest.lock */,
+				B8EDAFAA2787BFDC9AB3967E /* [CP] Check Pods Manifest.lock */,
 				FFF8F2E41D3E675F00F1575D /* Sources */,
 				FFF8F2E51D3E675F00F1575D /* Frameworks */,
 				FFF8F2E61D3E675F00F1575D /* Resources */,
-				F5451323C3CEE896D886F43D /* [CP] Embed Pods Frameworks */,
-				48BF299BBFF5FAD02850EE01 /* [CP] Copy Pods Resources */,
-				03D4DDB0465427B380BC5CA4 /* 📦 Embed Pods Frameworks */,
-				3096EA5AD129B1AB036486B0 /* 📦 Copy Pods Resources */,
+				9D2C182DAB7E414A767CA723 /* [CP] Embed Pods Frameworks */,
+				1BF6976C17FCF6AFD801A94B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -270,52 +279,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		03D4DDB0465427B380BC5CA4 /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wandr/Pods-Wandr-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		24D4A51CAA629D085B411872 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		3096EA5AD129B1AB036486B0 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wandr/Pods-Wandr-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		48BF299BBFF5FAD02850EE01 /* [CP] Copy Pods Resources */ = {
+		1BF6976C17FCF6AFD801A94B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -330,22 +294,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wandr/Pods-Wandr-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D120B5B3D304DFAFCDAAA982 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		F5451323C3CEE896D886F43D /* [CP] Embed Pods Frameworks */ = {
+		9D2C182DAB7E414A767CA723 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -358,6 +307,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wandr/Pods-Wandr-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8EDAFAA2787BFDC9AB3967E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

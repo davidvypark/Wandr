@@ -11,7 +11,7 @@ import UIKit
 
 protocol FeedPostViewDelegate: class {
 	func showComments()
-	func goToUserProfile()
+	func goToUserProfile()	
 }
 
 var commentsToLoad = [String]()

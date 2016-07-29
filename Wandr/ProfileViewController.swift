@@ -6,13 +6,14 @@
 //  Copyright © 2016 David Park. All rights reserved.
 //
 
+import Firebase
+import FirebaseAuth
 import UIKit
 import SnapKit
 import MobileCoreServices
-import Firebase
 
 class ProfileViewController: UIViewController {
-
+	
     let user: WandrUser
     // this should eventually just be a passed in parameter, 
     // because we don't always want to use the current user for a profile (you can be looking at someone else's profile)
