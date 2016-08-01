@@ -10,11 +10,12 @@ import UIKit
 import SnapKit
 import MobileCoreServices
 import Firebase
+import FirebaseStorage // Needed for testing how profile pictures will work
 
 class ProfileViewController: UIViewController {
-
+    
     let user: WandrUser
-    // this should eventually just be a passed in parameter, 
+    // this should eventually just be a passed in parameter,
     // because we don't always want to use the current user for a profile (you can be looking at someone else's profile)
     let currentUser = FIRAuth.auth()?.currentUser
     
@@ -32,9 +33,9 @@ class ProfileViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
     
-
+    
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -101,8 +102,30 @@ extension ProfileViewController: UICollectionViewDelegateFlowLayout, UICollectio
                                                                                    forIndexPath: indexPath) as! ProfileHeaderView
             headerView.delegate = self
             
+            
+            /*THIS IS JUST A TEST*/
+            let photoRef = FIRStorage.storage().referenceWithPath("/users").child((currentUser?.uid)!).child("profile_photo")
+            photoRef.dataWithMaxSize(1 * 1024 * 1024, completion: { (data, error) in
+                
+                if let data = data {
+                    let profileImage = UIImage(data: data)
+                    dispatch_async(dispatch_get_main_queue(), {
+                        headerView.profilePicture = profileImage!
+                        
+                        // this is probably not a great way of doing this. To get the image to appear we need to reload the header.
+                        // to do that there is a method called invalidateSupplementaryElementsOfKind:atIndexPaths, but i'm not quite sure how it works yet.
+                        // For now I'm just going to reload the whole collectionView as a temporary workaround for this..
+                        collectionView.reloadData()
+                        
+                    })
+                } else {
+                    print("data is nil")
+                }
+            })
+            /* END TEST */
+            
             if let profileImage = user.profilePicture, displayName = currentUser?.displayName {
-                headerView.profilePicture = profileImage
+                //                headerView.profilePicture = profileImage
                 headerView.username = displayName
             }
             
