@@ -36,7 +36,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.orangeColor()
         tabBarItem.title = "Profile"
-        navigationItem.title = user.username
+        navigationItem.title = user.displayName
         
         setupCollectionView()
     }

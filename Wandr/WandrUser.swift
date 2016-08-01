@@ -66,7 +66,6 @@ class WandrUser: NSObject, NSCoding {
     }
     
     func loadProfilePicture(completion: (UIImage?) -> () ) {
-        let photoRef =
         profilePictureReferencePath.dataWithMaxSize(1 * 1024 * 1024) { (data, error) in
             if let error = error {
                 print("Error: \(error.localizedDescription)")
@@ -97,7 +96,7 @@ class WandrUser: NSObject, NSCoding {
     
     class func loadCurrentUser() -> WandrUser? {
         guard let data = NSUserDefaults.standardUserDefaults().objectForKey(Constants.currentUserKey) as? NSData else {
-            fatalError("Unable to read user data from NSUserDefaults")
+            return nil
         }
         let user = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? WandrUser
         

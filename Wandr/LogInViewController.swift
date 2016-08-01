@@ -45,18 +45,20 @@ extension LogInViewController: FBSDKLoginButtonDelegate {
             if error == nil {
                 print("successfully logged in")
                 
-                //TODO: Add logic to only set user data for the first time the user is logged in (NSUserDefaults?)
                 if let user = user {
                     self.setData(forUser: user)
                 }
-                
-                
-                // Push to the main app
-                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                let mainVC = appDelegate.configureTabBarForRoot()
-                self.presentViewController(mainVC, animated: true, completion: nil)
+                else {
+                    print("Unable to unwrap user")
+                }
             }
         })
+    }
+    
+    func pushToMainApp(forUser user: WandrUser) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let mainVC = appDelegate.configureTabBarForRoot(withUser: user)
+        self.presentViewController(mainVC, animated: true, completion: nil)
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
@@ -87,6 +89,8 @@ extension LogInViewController: FBSDKLoginButtonDelegate {
                                     uid: user.uid, followerCount: 0, followingCount: 0, postCount: 0)
         
         currentUser.saveToUserDefaults()
+        
+        pushToMainApp(forUser: currentUser)
     }
     
     func setPhotoDataForURL(url: NSURL?, forUserAuthID userUID: String) {
