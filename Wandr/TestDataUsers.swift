@@ -11,11 +11,11 @@ import UIKit
 
 //TEST USERS
 
-let user1 = WandrUser(username: "DavidDaRillist")
-let user2 = WandrUser(username: "MattyTrump")
-let user3 = WandrUser(username: "thisISHizBANANAS")
-let user4 = WandrUser(username: "MexicanJedi91")
-let user5 = WandrUser(username: "ForGondorAndFriedChicken")
+let user1 = WandrUser(withDisplayName: "User1", fullName: "woof", profilePicture: nil, uid: "1234", followerCount: 0, followingCount: 0, postCount: 0)
+
+let user2 = WandrUser(withDisplayName: "User2", fullName: "meow", profilePicture: nil, uid: "5432", followerCount: 0, followingCount: 0, postCount: 0)
+
+
 
 
 

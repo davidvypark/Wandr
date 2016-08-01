@@ -71,7 +71,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Later on we should add something here to get the current user info before initializing this view controller
         generateTestData()
         
-        let profileViewController = ProfileViewController(withUser: user1)
+        // load current user data from user defaults
+        guard let currentUser = WandrUser.loadCurrentUser() else { fatalError("Unable to load user") }
+        
+        let profileViewController = ProfileViewController(withUser: currentUser)
         let profileNavController = UINavigationController(rootViewController: profileViewController)
         profileNavController.navigationBar.translucent = false
         profileNavController.navigationBar.opaque = true

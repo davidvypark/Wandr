@@ -79,6 +79,14 @@ extension LogInViewController: FBSDKLoginButtonDelegate {
         
         // The user photo needs to be stored on the Firebase/Storage, not the RT database.
         setPhotoDataForURL(user.photoURL, forUserAuthID: user.uid)
+        
+        // Save basic user data to plist on disk
+        let currentUser = WandrUser(withDisplayName: displayName,
+                                    fullName: displayName,
+                                    profilePicture: nil,
+                                    uid: user.uid, followerCount: 0, followingCount: 0, postCount: 0)
+        
+        currentUser.saveToUserDefaults()
     }
     
     func setPhotoDataForURL(url: NSURL?, forUserAuthID userUID: String) {

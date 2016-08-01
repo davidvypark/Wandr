@@ -21,7 +21,7 @@ class ProfileHeaderView: UICollectionReusableView {
     
     weak var delegate: ProfileHeaderViewDelegate?
     
-    var username = "EMPTY USERNAME"
+    var displayName = "EMPTY displayName"
     var profilePicture = UIImage()
     
     let profilePictureButton = UIButton()
@@ -95,7 +95,7 @@ class ProfileHeaderView: UICollectionReusableView {
     }
     
     func setupUsernameLabelAppearance() {
-        usernameLabel.text = username
+        usernameLabel.text = displayName
         usernameLabel.font = UIFont.boldSystemFontOfSize(UIFont.systemFontSize())
         addSubview(usernameLabel)
     }
