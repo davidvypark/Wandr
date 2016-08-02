@@ -13,11 +13,8 @@ import SnapKit
 import MobileCoreServices
 
 class ProfileViewController: UIViewController {
-	
+
     let user: WandrUser
-    // this should eventually just be a passed in parameter, 
-    // because we don't always want to use the current user for a profile (you can be looking at someone else's profile)
-    let currentUser = FIRAuth.auth()?.currentUser
     
     private let cellIdentifier = "Cell"
     private let headerIdentifier = "header"
@@ -33,15 +30,15 @@ class ProfileViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
     
-
+    
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         view.backgroundColor = UIColor.orangeColor()
         tabBarItem.title = "Profile"
-        navigationItem.title = user.username
+        navigationItem.title = user.displayName
         
         setupCollectionView()
     }
@@ -102,10 +99,22 @@ extension ProfileViewController: UICollectionViewDelegateFlowLayout, UICollectio
                                                                                    forIndexPath: indexPath) as! ProfileHeaderView
             headerView.delegate = self
             
-            if let profileImage = user.profilePicture, displayName = currentUser?.displayName {
-                headerView.profilePicture = profileImage
-                headerView.username = displayName
-            }
+            
+            user.loadProfilePicture({ (profilePicture) in
+                if let profilePicture = profilePicture {
+                    dispatch_async(dispatch_get_main_queue(), { 
+                        headerView.profilePicture = profilePicture
+                        
+                        // this is probably not a great way of doing this. To get the image to appear we need to reload the header.
+                        // To do that there is a method called invalidateSupplementaryElementsOfKind:atIndexPaths,
+                        // but I'm not quite sure how it works yet.
+                        // For now I'm just going to reload the whole collectionView as a temporary workaround for this..
+                        collectionView.reloadData()
+                    })
+                }
+            })
+            
+            headerView.displayName = user.displayName
             
             return headerView
         default: assert(false, "Unexpected element type")

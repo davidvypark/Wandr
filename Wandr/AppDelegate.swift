@@ -37,14 +37,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let rootViewController: UIViewController
         
-        if let user = FIRAuth.auth()?.currentUser {
-            print("displayname: \(user.displayName)")
-            print("photoURL: \(user.photoURL)")
-            
-            rootViewController = configureTabBarForRoot()
+        if let user = WandrUser.loadCurrentUser() {
+            rootViewController = configureTabBarForRoot(withUser: user)
         }
         else {
-            print("No user signed in")
             rootViewController = LogInViewController()
         }
         
@@ -54,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    func configureTabBarForRoot() -> UIViewController {
+    func configureTabBarForRoot(withUser currentUser: WandrUser) -> UIViewController {
         // Root is a TabBarController
         let rootTabViewController = UITabBarController()
         
@@ -72,7 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Later on we should add something here to get the current user info before initializing this view controller
         generateTestData()
         
-        let profileViewController = ProfileViewController(withUser: user1)
+        let profileViewController = ProfileViewController(withUser: currentUser)
         let profileNavController = UINavigationController(rootViewController: profileViewController)
         profileNavController.navigationBar.translucent = false
         profileNavController.navigationBar.opaque = true
