@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C9519BBF1D3E73FA008DBA87 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9519BBE1D3E73FA008DBA87 /* FeedViewController.swift */; };
+		C9519BBF1D3E73FA008DBA87 /* OldFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9519BBE1D3E73FA008DBA87 /* OldFeedViewController.swift */; };
 		C9519BC11D3E7406008DBA87 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9519BC01D3E7406008DBA87 /* CameraViewController.swift */; };
 		C9519BC31D3E740D008DBA87 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9519BC21D3E740D008DBA87 /* ProfileViewController.swift */; };
 		C95E13931D3FB92A0024E73A /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95E13921D3FB92A0024E73A /* UIImageExtension.swift */; };
@@ -23,6 +23,11 @@
 		FF3616BB1D4A4FF500050AF8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3616B81D4A4FF500050AF8 /* FBSDKLoginKit.framework */; };
 		FF3616BC1D4A4FF500050AF8 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3616B91D4A4FF500050AF8 /* FBSDKShareKit.framework */; };
 		FF9707501D49005C00B668DB /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF97074F1D49005C00B668DB /* UIColorExtensions.swift */; };
+		FFEA864E1D4FC0F40031857A /* testVid.MOV in Resources */ = {isa = PBXBuildFile; fileRef = FFEA864D1D4FC0F40031857A /* testVid.MOV */; };
+		FFEA86501D4FC9600031857A /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA864F1D4FC9600031857A /* FeedViewController.swift */; };
+		FFEA86531D4FD2570031857A /* FeedPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA86521D4FD2570031857A /* FeedPostCell.swift */; };
+		FFEA86551D4FEB190031857A /* testVid3.MOV in Resources */ = {isa = PBXBuildFile; fileRef = FFEA86541D4FEB190031857A /* testVid3.MOV */; };
+		FFEA86571D4FEB1D0031857A /* testVid2.MOV in Resources */ = {isa = PBXBuildFile; fileRef = FFEA86561D4FEB1D0031857A /* testVid2.MOV */; };
 		FFF8F2EC1D3E675F00F1575D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8F2EB1D3E675F00F1575D /* AppDelegate.swift */; };
 		FFF8F2F31D3E675F00F1575D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFF8F2F21D3E675F00F1575D /* Assets.xcassets */; };
 		FFF8F2FE1D3EB70000F1575D /* WandrPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8F2FD1D3EB70000F1575D /* WandrPost.swift */; };
@@ -38,7 +43,7 @@
 /* Begin PBXFileReference section */
 		204CF253C7CBCEC4A265D158 /* Pods_Wandr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wandr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9973B0DF57DFFCA6E92E7A /* Pods-Wandr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wandr.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wandr/Pods-Wandr.release.xcconfig"; sourceTree = "<group>"; };
-		C9519BBE1D3E73FA008DBA87 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		C9519BBE1D3E73FA008DBA87 /* OldFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldFeedViewController.swift; sourceTree = "<group>"; };
 		C9519BC01D3E7406008DBA87 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		C9519BC21D3E740D008DBA87 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C95E13921D3FB92A0024E73A /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
@@ -54,6 +59,11 @@
 		FF3616B81D4A4FF500050AF8 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/Wandr-ejohifvcxjbbmvftnqwimqckjhcu/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		FF3616B91D4A4FF500050AF8 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/Wandr-ejohifvcxjbbmvftnqwimqckjhcu/Build/Products/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework"; sourceTree = "<group>"; };
 		FF97074F1D49005C00B668DB /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		FFEA864D1D4FC0F40031857A /* testVid.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = testVid.MOV; sourceTree = "<group>"; };
+		FFEA864F1D4FC9600031857A /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		FFEA86521D4FD2570031857A /* FeedPostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedPostCell.swift; sourceTree = "<group>"; };
+		FFEA86541D4FEB190031857A /* testVid3.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = testVid3.MOV; sourceTree = "<group>"; };
+		FFEA86561D4FEB1D0031857A /* testVid2.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = testVid2.MOV; sourceTree = "<group>"; };
 		FFF8F2E81D3E675F00F1575D /* Wandr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wandr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFF8F2EB1D3E675F00F1575D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFF8F2F21D3E675F00F1575D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,6 +135,15 @@
 			name = "Facebook Login";
 			sourceTree = "<group>";
 		};
+		FFEA86511D4FC9B30031857A /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				FFEA864F1D4FC9600031857A /* FeedViewController.swift */,
+				FFEA86521D4FD2570031857A /* FeedPostCell.swift */,
+			);
+			name = Feed;
+			sourceTree = "<group>";
+		};
 		FFF8F2DF1D3E675F00F1575D = {
 			isa = PBXGroup;
 			children = (
@@ -152,12 +171,16 @@
 				C95E138D1D3F97610024E73A /* Profile */,
 				FFF8F3441D416FA100F1575D /* Camera */,
 				FFF8F3431D416F8F00F1575D /* Comments */,
-				FFF8F3421D416EFF00F1575D /* Feed */,
+				FFEA86511D4FC9B30031857A /* Feed */,
+				FFF8F3421D416EFF00F1575D /* OldFeed */,
 				FFF8F2FF1D3EB70700F1575D /* Models */,
 				FFF8F3451D416FF600F1575D /* Extensions */,
 				FFF8F3001D3EB94000F1575D /* TestDataUsers.swift */,
 				FFF8F2F71D3E675F00F1575D /* Info.plist */,
 				FFF8F2F21D3E675F00F1575D /* Assets.xcassets */,
+				FFEA864D1D4FC0F40031857A /* testVid.MOV */,
+				FFEA86561D4FEB1D0031857A /* testVid2.MOV */,
+				FFEA86541D4FEB190031857A /* testVid3.MOV */,
 			);
 			path = Wandr;
 			sourceTree = "<group>";
@@ -172,14 +195,14 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		FFF8F3421D416EFF00F1575D /* Feed */ = {
+		FFF8F3421D416EFF00F1575D /* OldFeed */ = {
 			isa = PBXGroup;
 			children = (
-				C9519BBE1D3E73FA008DBA87 /* FeedViewController.swift */,
+				C9519BBE1D3E73FA008DBA87 /* OldFeedViewController.swift */,
 				FFF8F3061D3EDDDA00F1575D /* FeedPostView.swift */,
 				FFF8F3041D3EDB7800F1575D /* FeedPostView.xib */,
 			);
-			name = Feed;
+			name = OldFeed;
 			sourceTree = "<group>";
 		};
 		FFF8F3431D416F8F00F1575D /* Comments */ = {
@@ -243,7 +266,7 @@
 				TargetAttributes = {
 					FFF8F2E71D3E675F00F1575D = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = VQXELCH5FM;
+						DevelopmentTeam = C7U2ZE2237;
 					};
 				};
 			};
@@ -272,6 +295,9 @@
 			files = (
 				FFF8F3051D3EDB7800F1575D /* FeedPostView.xib in Resources */,
 				FFF8F2F31D3E675F00F1575D /* Assets.xcassets in Resources */,
+				FFEA86551D4FEB190031857A /* testVid3.MOV in Resources */,
+				FFEA86571D4FEB1D0031857A /* testVid2.MOV in Resources */,
+				FFEA864E1D4FC0F40031857A /* testVid.MOV in Resources */,
 				C9E72A941D4642A2002453B5 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,16 +361,18 @@
 				C9E72A9A1D464C6D002453B5 /* FollowingViewController.swift in Sources */,
 				C9519BC31D3E740D008DBA87 /* ProfileViewController.swift in Sources */,
 				C9E72A981D464C0F002453B5 /* FollowersViewController.swift in Sources */,
+				FFEA86501D4FC9600031857A /* FeedViewController.swift in Sources */,
 				FF2F10641D46D5840092D5A4 /* LogInViewController.swift in Sources */,
 				C9519BC11D3E7406008DBA87 /* CameraViewController.swift in Sources */,
 				FFF8F3071D3EDDDA00F1575D /* FeedPostView.swift in Sources */,
 				FFF8F3031D3EBB2800F1575D /* WandrUser.swift in Sources */,
 				FFF8F33F1D4156EA00F1575D /* PostComment.swift in Sources */,
 				FF9707501D49005C00B668DB /* UIColorExtensions.swift in Sources */,
-				C9519BBF1D3E73FA008DBA87 /* FeedViewController.swift in Sources */,
+				C9519BBF1D3E73FA008DBA87 /* OldFeedViewController.swift in Sources */,
 				FFF8F2FE1D3EB70000F1575D /* WandrPost.swift in Sources */,
 				C95E13C81D417F350024E73A /* ProfileHeaderView.swift in Sources */,
 				FFF8F3411D415D7C00F1575D /* CommentsViewController.swift in Sources */,
+				FFEA86531D4FD2570031857A /* FeedPostCell.swift in Sources */,
 				C9E72A9C1D4658CB002453B5 /* String+BoldString.swift in Sources */,
 				C95E13931D3FB92A0024E73A /* UIImageExtension.swift in Sources */,
 				FFF8F3011D3EB94000F1575D /* TestDataUsers.swift in Sources */,

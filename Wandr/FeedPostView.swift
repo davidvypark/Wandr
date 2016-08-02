@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import AVKit
+import AVFoundation
 
 protocol FeedPostViewDelegate: class {
 	func showComments()
@@ -18,9 +20,8 @@ var commentsToLoad = [String]()
 
 class FeedPostView: UITableViewCell {
 	
+	var player: AVPlayer?
 	weak var delegate: FeedPostViewDelegate?
-
-	@IBOutlet weak var temporaryImageView: UIImageView!
 	
 	@IBOutlet weak var profilePictureButton: UIButton!
 	@IBOutlet weak var usernameButton: UIButton!
@@ -35,13 +36,21 @@ class FeedPostView: UITableViewCell {
 	@IBOutlet weak var commentsPreviewButton: UIButton!
 	
 	static let cellReuseIdentifier = "FeedCell"
+	
+	override func layoutSubviews() {
+		super.layoutSubviews()
+		
+		print("running layout subviews")
+
+		
+	}
 
 	var feedPostItem: WandrPost! {
 		
 		didSet {
 			profilePictureButton.setImage(feedPostItem.user.profilePicture!.circle, forState: .Normal)
 			usernameButton.setTitle(feedPostItem.user.username, forState: .Normal)
-			temporaryImageView.image = feedPostItem.content	
+
 			likesLabel.text = "♥︎ Likes: " + String(feedPostItem.bookmarks)
 			captionLabel.text = feedPostItem.caption
 			commentsPreviewButton.setTitle(feedPostItem.comments[0], forState: .Normal)
@@ -53,6 +62,8 @@ class FeedPostView: UITableViewCell {
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		
+		
+		print("running awake from nib")
 	}
 	
 	override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
@@ -71,6 +82,26 @@ class FeedPostView: UITableViewCell {
 		contentView.bottomAnchor.constraintEqualToAnchor(self.bottomAnchor).active = true
 		contentView.leftAnchor.constraintEqualToAnchor(self.leftAnchor).active = true
 		contentView.rightAnchor.constraintEqualToAnchor(self.rightAnchor).active = true
+	}
+	
+	func configureAVPlayerForCell() {
+		
+		mediaContentWindow.backgroundColor = UIColor.alizarinColor()
+		
+		let moviePath = NSBundle.mainBundle().pathForResource("testVid", ofType: "MOV")
+		print(moviePath)
+		if let path = moviePath {
+			let url = NSURL.fileURLWithPath(path)
+			let item = AVPlayerItem(URL: url)
+			self.player = AVPlayer(playerItem: item)
+			let playerLayer = AVPlayerLayer(player: player)
+			playerLayer.frame = self.mediaContentWindow.bounds
+			self.mediaContentWindow.layer.addSublayer(playerLayer)
+			self.addSubview(mediaContentWindow) // maybe this will work?
+			player!.play()
+			
+		}
+		
 	}
 	
 	//PostButtonActions

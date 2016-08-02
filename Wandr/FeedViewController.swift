@@ -2,74 +2,49 @@
 //  FeedViewController.swift
 //  Wandr
 //
-//  Created by Matt Amerige on 7/19/16.
+//  Created by David Park on 8/1/16.
 //  Copyright © 2016 David Park. All rights reserved.
 //
 
 import UIKit
 
-class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FeedPostViewDelegate {
+class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	
-	var tableView: UITableView = UITableView()
+	let tableView: UITableView = UITableView()
+	var cell: FeedPostCell = FeedPostCell()
 	
-	override func viewWillAppear(animated: Bool) {
-		generateTestData()
-	}
-
-	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = UIColor.blueColor()
-        title = "Feed"
-
-		tableView = UITableView(frame: UIScreen.mainScreen().bounds)
-		tableView.estimatedRowHeight = 640
-		tableView.rowHeight = UITableViewAutomaticDimension
-		
+	override func viewDidLoad() {
 		tableView.delegate = self
 		tableView.dataSource = self
+		view.addSubview(tableView)
+		tableView.frame = self.view.frame 
 		
-		let nib = UINib(nibName: "FeedPostView", bundle: nil)
-		tableView.registerNib(nib, forCellReuseIdentifier: FeedPostView.cellReuseIdentifier)
-		self.view.addSubview(self.tableView)
-
-    }
+		tableView.registerClass(FeedPostCell.self, forCellReuseIdentifier: "FeedPostCell")
+		
+	}
 	
-	func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-		return 1
+	func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+		return self.view.frame.width
 	}
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 2
-		
-		//return postArray.count
+		return 3
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		
-		let cell = self.tableView.dequeueReusableCellWithIdentifier(FeedPostView.cellReuseIdentifier, forIndexPath: indexPath) as! FeedPostView
-		cell.delegate = self
-		
-		let currentPost = postArray[indexPath.row]
-		cell.feedPostItem = currentPost
-		
+		cell = tableView.dequeueReusableCellWithIdentifier("FeedPostCell", forIndexPath: indexPath) as! FeedPostCell
+		cell.configureVideoFile(videoArray[indexPath.row])
+		cell.reloadInputViews()
+
 		return cell
 	}
 	
-	//Feed Post Button Actions
-	
-	func showComments() {
-		let destinationVC = CommentsViewController()
-		navigationController?.pushViewController(destinationVC, animated: true)
+	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+		print(indexPath.row)
+		cell.playVideo()
+		//is not playing the video that I want. The cell should know which video it's holding
 	}
 	
-	func goToUserProfile() {
-        /** Hi David -- I had to comment this out because I changed the ProfileViewController's initialization. 
-         It now requires as user object, since it doesn't make sense to have a profile without any user. You'll have to somehow get the user object here
-         and pass it forward for the profileVC to use
-         */
-//		let destinationVC = ProfileViewController()
-//		navigationController?.pushViewController(destinationVC, animated: true)
-	}
-	
+
 }

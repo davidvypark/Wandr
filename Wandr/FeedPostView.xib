@@ -36,7 +36,7 @@
                             <constraint firstAttribute="width" secondItem="kJA-JM-MHj" secondAttribute="height" multiplier="210:15" id="vwa-wD-dFY"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcI-5l-Oqk">
@@ -47,7 +47,7 @@
                         <attributedString key="attributedText">
                             <fragment content="Caption Label">
                                 <attributes>
-                                    <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <font key="NSFont" size="14" name="HelveticaNeue"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
@@ -70,17 +70,8 @@
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vDt-5r-IHo">
                         <rect key="frame" x="0.0" y="85.5" width="544" height="544"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="col-Pe-RtB">
-                                <rect key="frame" x="0.0" y="10" width="544" height="534"/>
-                            </imageView>
-                        </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="col-Pe-RtB" secondAttribute="trailing" id="Xqw-hM-QCr"/>
-                            <constraint firstItem="col-Pe-RtB" firstAttribute="leading" secondItem="vDt-5r-IHo" secondAttribute="leading" id="aB2-rD-KRm"/>
-                            <constraint firstAttribute="bottom" secondItem="col-Pe-RtB" secondAttribute="bottom" id="h47-Db-Mks"/>
                             <constraint firstAttribute="width" secondItem="vDt-5r-IHo" secondAttribute="height" multiplier="1:1" id="s6m-X8-WN5"/>
-                            <constraint firstItem="col-Pe-RtB" firstAttribute="top" secondItem="vDt-5r-IHo" secondAttribute="top" constant="10" id="tS5-hH-1F2"/>
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qw7-gg-G9R">
@@ -205,7 +196,6 @@
                 <outlet property="moreButton" destination="DFE-sA-pgN" id="yTO-nk-K2u"/>
                 <outlet property="profilePictureButton" destination="ltH-RO-FuV" id="cjG-bY-f6q"/>
                 <outlet property="shareIconButton" destination="cUt-JB-qAe" id="sNL-yF-Pn8"/>
-                <outlet property="temporaryImageView" destination="col-Pe-RtB" id="6Da-bc-RrA"/>
                 <outlet property="usernameButton" destination="8PH-cn-yGR" id="9mh-TO-1Q1"/>
                 <outlet property="viewAllCommentsButton" destination="zUa-qm-HAr" id="3Fe-pi-dqz"/>
             </connections>
