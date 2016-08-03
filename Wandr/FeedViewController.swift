@@ -8,10 +8,9 @@
 
 import UIKit
 
-class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FeedPostCellDelegate {
 	
 	let tableView: UITableView = UITableView()
-	var cell: FeedPostCell = FeedPostCell()
 	
 	override func viewDidLoad() {
 		tableView.delegate = self
@@ -20,6 +19,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		tableView.frame = self.view.frame 
 		
 		tableView.registerClass(FeedPostCell.self, forCellReuseIdentifier: "FeedPostCell")
+		tableView.reloadData()
 		
 	}
 	
@@ -28,23 +28,36 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	}
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 3
+		return videoArray.count
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		
-		cell = tableView.dequeueReusableCellWithIdentifier("FeedPostCell", forIndexPath: indexPath) as! FeedPostCell
-		cell.configureVideoFile(videoArray[indexPath.row])
-		cell.reloadInputViews()
-
+		let cell = tableView.dequeueReusableCellWithIdentifier("FeedPostCell", forIndexPath: indexPath) as! FeedPostCell
+		cell.configureVideoFile(videoArray[indexPath.row]) { 
+			print("RETURN 2")
+		}
+		
+		print("RETURN 1")
+		print (cell.player)
 		return cell
 	}
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		print(indexPath.row)
-		cell.playVideo()
-		//is not playing the video that I want. The cell should know which video it's holding
+		
+		let tappedCell = tableView.cellForRowAtIndexPath(indexPath) as! FeedPostCell
+		tappedCell.playVideo()
+	
 	}
+	
+	func likeButtonPressed() {
+		
+		
+	}
+	
+	
+	
 	
 
 }

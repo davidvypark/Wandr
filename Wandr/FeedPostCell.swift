@@ -13,7 +13,7 @@ import AVFoundation
 import SnapKit
 
 protocol FeedPostCellDelegate: class {
-	
+	func likeButtonPressed()
 	
 }
 
@@ -26,6 +26,7 @@ class FeedPostCell: UITableViewCell {
 	let videoView: UIView = UIView()
 	var likeButton = UIButton(type: UIButtonType.Custom) as UIButton
 	var videoName: String?
+	var playerLayer = AVPlayerLayer()
 	
 	static let cellReuseIdentifier = "FeedPostCell"
 	
@@ -37,6 +38,7 @@ class FeedPostCell: UITableViewCell {
 		videoView.backgroundColor = UIColor.randomCustomColor()
 		
 		likeButton.setImage(UIImage(named: "likeButton"), forState: .Normal)
+		likeButton.addTarget(self, action: #selector(likeButtonPressed), forControlEvents: .TouchUpInside)
 		contentView.addSubview(likeButton)
 		
 		likeButton.snp_makeConstraints { (make) in
@@ -48,7 +50,7 @@ class FeedPostCell: UITableViewCell {
 		}
 	}
 	
-	func configureVideoFile(vidName: String) {
+	func configureVideoFile(vidName: String, completion: () -> ()) {
 		
 		videoView.backgroundColor = UIColor.alizarinColor()
 		
@@ -58,19 +60,23 @@ class FeedPostCell: UITableViewCell {
 			let url = NSURL.fileURLWithPath(path)
 			let item = AVPlayerItem(URL: url)
 			self.player = AVPlayer(playerItem: item)
-			let playerLayer = AVPlayerLayer(player: player)
+			playerLayer = AVPlayerLayer(player: player)
 			playerLayer.frame = self.videoView.bounds
 			self.videoView.layer.addSublayer(playerLayer)
 			self.addSubview(videoView)
 			
-			//but dont play it yet
+			completion()
+			
 		}
 	}
 	
 	func playVideo() {
 		self.player!.play()
 		
-		//why isnt this playing the specific video that I want?
+	}
+	
+	func likeButtonPressed() {
+		
 	}
 	
 	
