@@ -24,9 +24,9 @@
 		FF3616BB1D4A4FF500050AF8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3616B81D4A4FF500050AF8 /* FBSDKLoginKit.framework */; };
 		FF3616BC1D4A4FF500050AF8 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3616B91D4A4FF500050AF8 /* FBSDKShareKit.framework */; };
 		FF9707501D49005C00B668DB /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF97074F1D49005C00B668DB /* UIColorExtensions.swift */; };
+		FFE94A611D5223AB0036ED38 /* FeedPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE94A601D5223AB0036ED38 /* FeedPostCell.swift */; };
 		FFEA864E1D4FC0F40031857A /* testVid.MOV in Resources */ = {isa = PBXBuildFile; fileRef = FFEA864D1D4FC0F40031857A /* testVid.MOV */; };
 		FFEA86501D4FC9600031857A /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA864F1D4FC9600031857A /* FeedViewController.swift */; };
-		FFEA86531D4FD2570031857A /* FeedPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA86521D4FD2570031857A /* FeedPostCell.swift */; };
 		FFEA86551D4FEB190031857A /* testVid3.MOV in Resources */ = {isa = PBXBuildFile; fileRef = FFEA86541D4FEB190031857A /* testVid3.MOV */; };
 		FFEA86571D4FEB1D0031857A /* testVid2.MOV in Resources */ = {isa = PBXBuildFile; fileRef = FFEA86561D4FEB1D0031857A /* testVid2.MOV */; };
 		FFF8F2EC1D3E675F00F1575D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8F2EB1D3E675F00F1575D /* AppDelegate.swift */; };
@@ -61,9 +61,9 @@
 		FF3616B81D4A4FF500050AF8 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/Wandr-ejohifvcxjbbmvftnqwimqckjhcu/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		FF3616B91D4A4FF500050AF8 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/Wandr-ejohifvcxjbbmvftnqwimqckjhcu/Build/Products/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework"; sourceTree = "<group>"; };
 		FF97074F1D49005C00B668DB /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		FFE94A601D5223AB0036ED38 /* FeedPostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedPostCell.swift; sourceTree = "<group>"; };
 		FFEA864D1D4FC0F40031857A /* testVid.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = testVid.MOV; sourceTree = "<group>"; };
 		FFEA864F1D4FC9600031857A /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		FFEA86521D4FD2570031857A /* FeedPostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedPostCell.swift; sourceTree = "<group>"; };
 		FFEA86541D4FEB190031857A /* testVid3.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = testVid3.MOV; sourceTree = "<group>"; };
 		FFEA86561D4FEB1D0031857A /* testVid2.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = testVid2.MOV; sourceTree = "<group>"; };
 		FFF8F2E81D3E675F00F1575D /* Wandr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wandr.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,7 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				FFEA864F1D4FC9600031857A /* FeedViewController.swift */,
-				FFEA86521D4FD2570031857A /* FeedPostCell.swift */,
+				FFE94A601D5223AB0036ED38 /* FeedPostCell.swift */,
 			);
 			name = Feed;
 			sourceTree = "<group>";
@@ -383,6 +383,7 @@
 				FFF8F2FE1D3EB70000F1575D /* WandrPost.swift in Sources */,
 				C95E13C81D417F350024E73A /* ProfileHeaderView.swift in Sources */,
 				FFF8F3411D415D7C00F1575D /* CommentsViewController.swift in Sources */,
+				FFE94A611D5223AB0036ED38 /* FeedPostCell.swift in Sources */,
 				C9C31DD41D4F92CA006F5806 /* Constants.swift in Sources */,
 				C9E72A9C1D4658CB002453B5 /* String+BoldString.swift in Sources */,
 				C95E13931D3FB92A0024E73A /* UIImageExtension.swift in Sources */,

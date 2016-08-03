@@ -68,7 +68,7 @@ class FeedPostCell: UITableViewCell {
 	}
 	
 	func playVideo() {
-		player!.play()
+		self.player!.play()
 		
 		//why isnt this playing the specific video that I want?
 	}

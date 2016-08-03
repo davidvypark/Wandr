@@ -11,6 +11,7 @@ import FBSDKLoginKit
 import Firebase
 import FirebaseDatabase
 import FirebaseStorage
+import FirebaseAuth
 
 class LogInViewController: UIViewController {
     
