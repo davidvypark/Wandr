@@ -17,11 +17,6 @@ let user2 = WandrUser(withDisplayName: "User2", fullName: "meow", profilePicture
 
 
 
-
-
-
-
-
 //TEST POSTS
 
 let post1 = WandrPost(user: user1, content: UIImage(named:"stockpic1")! , bookmarks: 50, location: "Los Angeles, CA", comments: ["awesome!! Take a pic!!! Bring me back a souvenier", "wish i was there", "#GOALS"], caption: "Me and the squad taking a little trip to destroy a ring real quick. Should be back by the weekend. Hit me up if you want to grab some tacos")
